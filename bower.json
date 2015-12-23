@@ -1,0 +1,6 @@
+{
+    "name": "fs_code_snippet",
+    "dependencies": {
+        "prism": "^1.3"
+    }
+}

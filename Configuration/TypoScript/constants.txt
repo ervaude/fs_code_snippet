@@ -1,0 +1,14 @@
+plugin.tx_fscodesnippet {
+	view {
+		# cat=plugin.tx_fscodesnippet/file; type=string; label=Path to layout root (FE)
+		layoutRootPath = EXT:fs_code_snippet/Resources/Private/Layouts/
+		# cat=plugin.tx_fscodesnippet/file; type=string; label=Path to partial root (FE)
+		partialsRootPath = EXT:fs_code_snippet/Resources/Private/Partials/
+		# cat=plugin.tx_fscodesnippet/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:fs_code_snippet/Resources/Private/Templates/
+	}
+	settings {
+		# cat=plugin.tx_fscodesnippet/file; type=options [Default=,Okaidia=-okaidia,Dark=-dark,Coy=-coy,Funky=-funky,Tomorrow=-tomorrow,Twilight=-twilight]; label=Theme for Code Snippets
+		theme = -okaidia
+	}
+}

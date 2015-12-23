@@ -1,0 +1,32 @@
+{
+  "name": "danielgoerz/fs-code-snippet",
+  "type": "typo3-cms-extension",
+  "description": "A content element to render code snippet of various programming languages.",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "code snippet"
+  ],
+  "homepage": "https://usetypo3.com",
+  "authors": [
+    {
+      "name": "Daniel Goerz",
+      "role": "Developer",
+      "homepage": "https://usetypo3.com"
+    }
+  ],
+  "license": [
+    "GPL-2.0+"
+  ],
+  "require": {
+    "typo3/cms-core": ">=7.6.2,<9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DanielGoerz\\FsCodeSnippet\\": "Classes"
+    }
+  },
+  "replace": {
+    "fs_code_snippet": "self.version"
+  }
+}
