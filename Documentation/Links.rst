@@ -25,3 +25,6 @@ Links
 
 :Contact:
 		`@ervaude <https://twitter.com/ervaude>`__
+
+:Prism.js:
+		http://prismjs.com

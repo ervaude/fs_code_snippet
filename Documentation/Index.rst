@@ -35,7 +35,7 @@ Code Snippet CE (fs_code_snippet)
       a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
 
 
-	**Table of Contents**
+**Table of Contents**
 
 .. toctree::
       :maxdepth: 2
@@ -44,4 +44,5 @@ Code Snippet CE (fs_code_snippet)
 
       Introduction/Index
       Administrator/Index
+      Developer/Index
       Links
