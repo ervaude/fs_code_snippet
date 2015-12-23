@@ -52,7 +52,10 @@ call_user_func(function () {
             --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
             --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
             programming_language,
-            bodytext
+            bodytext,
+            --div--;' . $frontendLanguageFilePrefix . 'tabs.access,
+                hidden;' . $frontendLanguageFilePrefix . 'field.default.hidden,
+                --palette--;' . $frontendLanguageFilePrefix . 'palette.access;access,
         ',
     ];
 
