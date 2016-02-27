@@ -8,18 +8,18 @@ $EM_CONF[$_EXTKEY] = [
     'author_email'     => 'ervaude@gmail.com',
     'state'            => 'stable',
     'uploadfolder'     => false,
+    'createDirs'       => '',
     'clearCacheOnLoad' => 1,
     'author_company'   => '',
     'version'          => '1.0.0',
-    'constraints'      =>
-        [
-            'depends'   =>
-                ['typo3' => '7.6.0-7.6.99'],
-            'conflicts' => [],
-            'suggests'  => [],
+    'constraints'      => [
+        'depends'   => [
+            'typo3' => '7.6.0-7.6.99',
+            'fluid_styled_content' => '7.6.0'
         ],
-    'createDirs'       => null,
-    'clearcacheonload' => true,
+        'conflicts' => [],
+        'suggests'  => [],
+    ],
     'autoload'         => [
         'psr-4' => [
             'DanielGoerz\\FsCodeSnippet\\' => 'Classes'
