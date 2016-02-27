@@ -38,7 +38,7 @@ class CodeSnippetElement extends T3editorElement
             return parent::render();
         } catch (\InvalidArgumentException $e) {
             // Format not allowed internally
-            $this->data['parameterArray']['fieldConf']['config']['format'] = self::MODE_MIXED;
+            $this->data['parameterArray']['fieldConf']['config']['format'] = parent::MODE_MIXED;
         }
         return parent::render();
     }
@@ -54,10 +54,11 @@ class CodeSnippetElement extends T3editorElement
         if ($mode === self::MODE_PHP) {
             return json_encode(['../contrib/php/js/tokenizephp.js', '../contrib/php/js/parsephp.js']);
         }
-        if ($mode === CodeSnippetLanguage::BASH) {
-            $mode = self::MODE_MIXED;
+        $parserfile = parent::getParserfileByMode($mode);
+        if ($parserfile === '[]') {
+            return parent::getParserfileByMode(parent::MODE_MIXED);
         }
-        return parent::getParserfileByMode($mode);
+        return $parserfile;
     }
 
     /**
