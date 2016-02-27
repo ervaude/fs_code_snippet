@@ -61,20 +61,6 @@ class CodeSnippetElement extends T3editorElement
     }
 
     /**
-     * Determine the correct css file for given mode
-     *
-     * @param string $mode
-     * @return string css file name
-     */
-    protected function getStylesheetByMode($mode)
-    {
-        if ($mode === CodeSnippetLanguage::BASH) {
-            $mode = self::MODE_MIXED;
-        }
-        return parent::getStylesheetByMode($mode);
-    }
-
-    /**
      * @return void
      */
     protected function allowSupportedLanguages()
