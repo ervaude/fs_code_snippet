@@ -49,8 +49,24 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
                 $row['bodytext'] = rtrim($row['bodytext'], "\n\r");
             }
             $row['bodytext'] = str_replace(['<', '>'], ['&lt', '&gt'], $row['bodytext']);
-            $itemContent = '<pre><code>' . $row['bodytext'] . '</code></pre>';
+            $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($row['programming_language']) . ':</strong><br />';
+            $itemContent .= '<pre><code>' . $row['bodytext'] . '</code></pre>';
             $drawItem = false;
         }
+    }
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    protected function getProgrammingLanguageLabel($value)
+    {
+        $programmingLanguages = $GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'];
+        foreach ($programmingLanguages as $programmingLanguage) {
+            if ($programmingLanguage[1] === $value) {
+                return $programmingLanguage[0];
+            }
+        }
+        return $value;
     }
 }
