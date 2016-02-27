@@ -15,10 +15,11 @@ Target group: **Developers**
 
 Per default this extensions only provides a small sample of programming languages supported by prism.js.
 If you need another programming language, you can achieve this by overwriting the TCA for the programming_language field.
+You can use the included constant from the enumeration to get the needed string right.
 
 .. code-block:: php
 
-    $GLOBALS['TCA']['tt_content']['columns']['programming_langauge']['config']['items'][] = ['Python' => 'python'];
+    $GLOBALS['TCA']['tt_content']['columns']['programming_langauge']['config']['items'][] = ['Python' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PYTHON];
 
 You can add every language identifier that prism supports. Anyway the T3Editor wont know that syntax and will run in "mixed" mode.
 To include the prism component in the ``FsCodeSnippet.js`` you can make use of the shipped gulp config. Go to the extension

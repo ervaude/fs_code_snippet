@@ -34,6 +34,6 @@ Configuration
 -------------
 
 * The TemplateRootPath can be overwritten with constant ``{$plugin.tx_fscodesnippet.view.templateRootPath}``. However the fallback mechanism of
-``FLUIDCONTENT`` could be used as well to override the default template.
+``FLUIDTEMPLATE`` could be used as well to override the default template.
 
 * In the constant editor the **theme** of the code snippet can be adjusted according to the themes shipped by prism.js.
