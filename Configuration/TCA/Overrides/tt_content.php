@@ -28,7 +28,7 @@ call_user_func(function () {
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['None', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_MIXED],
-                    ['Bash', \DanielGoerz\FsCodeSnippet\Form\Element\CodeSnippetElement::MODE_BASH],
+                    ['Bash', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::BASH],
                     ['CSS', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_CSS],
                     ['HTML', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_HTML],
                     ['JavaScript', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_JAVASCRIPT],

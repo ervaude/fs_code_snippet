@@ -13,7 +13,7 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use DanielGoerz\FsCodeSnippet\Form\Element\CodeSnippetElement;
+use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
@@ -53,7 +53,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
             case T3editorElement::MODE_JAVASCRIPT:
                 $programmingLanguage = 'javascript';
                 break;
-            case CodeSnippetElement::MODE_BASH:
+            case CodeSnippetLanguage::BASH:
                 $programmingLanguage = 'bash';
                 break;
             case T3editorElement::MODE_TYPOSCRIPT:

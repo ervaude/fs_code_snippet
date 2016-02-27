@@ -13,6 +13,7 @@ namespace DanielGoerz\FsCodeSnippet\Form\Element;
  *
  * The TYPO3 project - inspiring people to share!
  */
+use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
@@ -22,8 +23,6 @@ use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
  */
 class CodeSnippetElement extends T3editorElement
 {
-    const MODE_BASH = 'bash';
-
     /**
      * Render t3editor element
      *
@@ -31,7 +30,7 @@ class CodeSnippetElement extends T3editorElement
      */
     public function render()
     {
-        $this->allowedModes[] = self::MODE_BASH;
+        $this->allowSupportedLanguages();
         if (!empty($this->data['databaseRow']['programming_language'][0])) {
             $this->data['parameterArray']['fieldConf']['config']['format'] = $this->data['databaseRow']['programming_language'][0];
         }
@@ -55,7 +54,7 @@ class CodeSnippetElement extends T3editorElement
         if ($mode === self::MODE_PHP) {
             return json_encode(['../contrib/php/js/tokenizephp.js', '../contrib/php/js/parsephp.js']);
         }
-        if ($mode === self::MODE_BASH) {
+        if ($mode === CodeSnippetLanguage::BASH) {
             $mode = self::MODE_MIXED;
         }
         return parent::getParserfileByMode($mode);
@@ -69,9 +68,20 @@ class CodeSnippetElement extends T3editorElement
      */
     protected function getStylesheetByMode($mode)
     {
-        if ($mode === self::MODE_BASH) {
+        if ($mode === CodeSnippetLanguage::BASH) {
             $mode = self::MODE_MIXED;
         }
         return parent::getStylesheetByMode($mode);
+    }
+
+    /**
+     * @return void
+     */
+    protected function allowSupportedLanguages()
+    {
+        $supportedLanguages = CodeSnippetLanguage::getConstants();
+        foreach ($supportedLanguages as $supportedLanguage) {
+            $this->allowedModes[] = $supportedLanguage;
+        }
     }
 }
