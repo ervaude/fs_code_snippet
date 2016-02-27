@@ -63,6 +63,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
                 $programmingLanguage = $processedData['data']['programming_language'];
         }
         $processedData['programmingLanguage'] = $programmingLanguage;
+        $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
         return $processedData;
     }
 }
