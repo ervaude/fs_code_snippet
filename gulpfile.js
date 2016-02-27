@@ -13,9 +13,11 @@ gulp.task('build-js', function () {
     return gulp.src([
             prismBasePath + 'components/prism-core.js',
             prismBasePath + 'components/prism-markup.js',
+            prismBasePath + 'components/prism-apacheconf.js',
             prismBasePath + 'components/prism-css.js',
             prismBasePath + 'components/prism-clike.js',
             prismBasePath + 'components/prism-javascript.js',
+            prismBasePath + 'components/prism-json.js',
             prismBasePath + 'components/prism-bash.js',
             prismBasePath + 'components/prism-php.js',
             prismBasePath + 'components/prism-less.js',

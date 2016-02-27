@@ -28,10 +28,12 @@ call_user_func(function () {
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['None', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_MIXED],
+                    ['Apache Config', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::APACHE_CONFIGURATION],
                     ['Bash', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::BASH],
                     ['CSS', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_CSS],
                     ['HTML', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_HTML],
                     ['JavaScript', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_JAVASCRIPT],
+                    ['JSON', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::JSON],
                     ['PHP', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_PHP],
                     ['Typoscript', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_TYPOSCRIPT],
                     ['XML', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_XML]
