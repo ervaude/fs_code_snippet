@@ -45,7 +45,7 @@ call_user_func(function () {
     // Reload on change
     $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] .= ',programming_language';
     // Use type icon
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['code_snippet'] = 'fs-code-snippet';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['fs_code_snippet'] = 'fs-code-snippet';
     // What fields should be displayed
     $GLOBALS['TCA']['tt_content']['types']['fs_code_snippet'] = [
         'showitem' => '
