@@ -129,4 +129,6 @@ class CodeSnippetLanguage extends Enumeration
     const VIM = 'vim';
     const WIKI_MARKUP = 'wiki';
     const YAML = 'yaml';
+
+    const COMMANDLINE = 'commandline';
 }

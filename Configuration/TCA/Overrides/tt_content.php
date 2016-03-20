@@ -30,6 +30,7 @@ call_user_func(function () {
                     ['None', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_MIXED],
                     ['Apache Config', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::APACHE_CONFIGURATION],
                     ['Bash', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::BASH],
+                    ['Command-line', \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::COMMANDLINE],
                     ['CSS', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_CSS],
                     ['HTML', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_HTML],
                     ['JavaScript', \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_JAVASCRIPT],
@@ -53,7 +54,7 @@ call_user_func(function () {
         'showitem' => '
             --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
             --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
-            programming_language,
+            programming_language,pi_flexform,
             bodytext,
             --div--;' . $frontendLanguageFilePrefix . 'tabs.access,
                 hidden;' . $frontendLanguageFilePrefix . 'field.default.hidden,
@@ -72,7 +73,18 @@ call_user_func(function () {
                 'rows' => 20,
             ],
         ],
+        'pi_flexform' => [
+            'label' => 'Command-line options',
+            'displayCond' => 'FIELD:programming_language:=:' . \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::COMMANDLINE
+        ]
     ];
+
+    // Add a flexform to the fs_code_snippet CType
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+        '',
+        'FILE:EXT:fs_code_snippet/Configuration/FlexForms/fs_code_snippet_flexform.xml',
+        'fs_code_snippet'
+    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('fs_code_snippet', 'Configuration/TypoScript', 'Code Snippet CE');
 });

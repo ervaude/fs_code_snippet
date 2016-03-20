@@ -25,7 +25,8 @@ gulp.task('build-js', function () {
             prismBasePath + 'components/prism-sql.js',
             prismBasePath + 'plugins/file-highlight/prism-file-highlight.js',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.js',
-            prismBasePath + 'plugins/show-language/prism-show-language.js'
+            prismBasePath + 'plugins/show-language/prism-show-language.js',
+            prismBasePath + 'plugins/command-line/prism-command-line.js'
     ])
         .pipe(concat('FsCodeSnippet.js'))
         .pipe(gulp.dest('Resources/Public/JavaScript/'));
@@ -36,7 +37,8 @@ gulp.task('build-css', function () {
     return gulp.src([
             prismBasePath + 'themes/*.css',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.css',
-            prismBasePath + 'plugins/show-language/prism-show-language.css'
+            prismBasePath + 'plugins/show-language/prism-show-language.css',
+            prismBasePath + 'plugins/command-line/prism-command-line.css'
         ])
         .pipe(gulp.dest('Resources/Public/CSS/'));
 });

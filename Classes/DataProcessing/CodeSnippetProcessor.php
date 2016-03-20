@@ -13,6 +13,9 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  *
  * The TYPO3 project - inspiring people to share!
  */
+use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
@@ -46,11 +49,29 @@ class CodeSnippetProcessor implements DataProcessorInterface
             case T3editorElement::MODE_TYPOSCRIPT:
                 $programmingLanguage = 'none';
                 break;
+            case CodeSnippetLanguage::COMMANDLINE:
+                $programmingLanguage = CodeSnippetLanguage::BASH;
+                $flexFormContent = $this->getFlexFormContentAsArray($processedData['data']['pi_flexform']);
+                if (!empty($flexFormContent['settings']['commandline'])) {
+                    $processedData['commandline'] = $flexFormContent['settings']['commandline'];
+                }
+                break;
             default:
                 $programmingLanguage = $processedData['data']['programming_language'];
         }
         $processedData['programmingLanguage'] = $programmingLanguage;
         $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
         return $processedData;
+    }
+
+    /**
+     * @param string $flexFormContent
+     * @return array
+     */
+    protected function getFlexFormContentAsArray($flexFormContent)
+    {
+        /** @var FlexFormService $flexFormService */
+        $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
+        return $flexFormService->convertFlexFormContentToArray($flexFormContent);
     }
 }
