@@ -21,7 +21,7 @@ if (TYPO3_MODE === 'BE') {
                 'class' => \DanielGoerz\FsCodeSnippet\Form\Element\CodeSnippetElement::class,
             );
 
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $extKey . '/Configuration/PageTSconfig/PageTSconfig.ts">');
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $extKey . '/Configuration/PageTSconfig/PageTSConfig.ts">');
         },
         $_EXTKEY
     );
