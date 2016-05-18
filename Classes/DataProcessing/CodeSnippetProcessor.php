@@ -46,9 +46,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
             case T3editorElement::MODE_XML:
                 $programmingLanguage = 'markup';
                 break;
-            case T3editorElement::MODE_TYPOSCRIPT:
-                $programmingLanguage = 'none';
-                break;
             case CodeSnippetLanguage::COMMANDLINE:
                 $programmingLanguage = CodeSnippetLanguage::BASH;
                 $flexFormContent = $this->getFlexFormContentAsArray($processedData['data']['pi_flexform']);
