@@ -2,12 +2,6 @@ lib.fluidContent {
 	templateRootPaths {
 		1450878401 = {$plugin.tx_fscodesnippet.view.templateRootPath}
 	}
-	partialRootPaths {
-		1450878401 = {$plugin.tx_fscodesnippet.view.partialRootPath}
-	}
-	layoutRootPaths {
-		1450878401 = {$plugin.tx_fscodesnippet.view.layoutRootPath}
-	}
 }
 tt_content {
 	fs_code_snippet =< lib.fluidContent
