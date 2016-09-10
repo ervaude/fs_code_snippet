@@ -39,20 +39,35 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         &$itemContent,
         array &$row
     ) {
-        if ($row['CType'] === 'fs_code_snippet') {
-            $limit = 5;
-            $lines = explode("\n", $row['bodytext']);
-            if (count($lines) > $limit) {
-                $maximumItems = array_slice($lines, 0, $limit);
-                $maximumItems[] = '...';
-                $row['bodytext'] = implode("\n", $maximumItems);
-                $row['bodytext'] = rtrim($row['bodytext'], "\n\r");
-            }
-            $row['bodytext'] = str_replace(['<', '>'], ['&lt', '&gt'], $row['bodytext']);
-            $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($row['programming_language']) . ':</strong><br />';
-            $itemContent .= '<pre><code>' . $row['bodytext'] . '</code></pre>';
-            $drawItem = false;
+        // Process only fs_code_snippet
+        if ($row['CType'] !== 'fs_code_snippet') {
+            return;
         }
+
+        $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($row['programming_language']) . ':</strong><br />' .
+            '<pre><code>' . $this->prepareCodeSnippet($row['bodytext']) . '</code></pre>';
+
+        $drawItem = false;
+    }
+
+    /**
+     * Strips the content of the code snippet to a maximum of $limit lines
+     * and removes opening and closing HTML tags as well as empty lines at the end.
+     *
+     * @param string $codeSnippet
+     * @param int $limit
+     * @return string
+     */
+    protected function prepareCodeSnippet($codeSnippet, $limit = 5)
+    {
+        $lines = explode("\n", $codeSnippet);
+        if (count($lines) > $limit) {
+            $maximumItems = array_slice($lines, 0, $limit);
+            $maximumItems[] = '...';
+            $codeSnippet = implode("\n", $maximumItems);
+            $codeSnippet = rtrim($codeSnippet, "\n\r");
+        }
+        return str_replace(['<', '>'], ['&lt', '&gt'], $codeSnippet);
     }
 
     /**
