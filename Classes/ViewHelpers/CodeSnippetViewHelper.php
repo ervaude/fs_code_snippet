@@ -1,5 +1,4 @@
 <?php
-
 namespace DanielGoerz\FsCodeSnippet\ViewHelpers;
 
 /**
@@ -14,15 +13,12 @@ namespace DanielGoerz\FsCodeSnippet\ViewHelpers;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /**
- * Class CodeSnippetViewHelper
- *
- * @author Daniel Goerz <dlg@lightwerk.com>
+ * This ViewHelper renders the <pre> tag for the code-snippet content element
+ * with all data-attributes and classes that are needed.
  */
 class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 {
