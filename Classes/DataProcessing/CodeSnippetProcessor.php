@@ -40,6 +40,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
+        $processedData['commandline'] = [];
         // Map the T3editorElement constants to the string expected by prism
         switch ($processedData['data']['programming_language']) {
             case T3editorElement::MODE_HTML:
