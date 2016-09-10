@@ -1,7 +1,9 @@
 /*global require*/
 var gulp   = require('gulp'),
     concat = require('gulp-concat'),
-    prismBasePath = 'Resources/Private/bower_components/prism/';
+    privatePath = 'Resources/Private/',
+    prismBasePath = privatePath +'bower_components/prism/',
+    customBasePath = privatePath + 'JavaScript/';
 
 gulp.task('build', function () {
     'use strict';
@@ -23,6 +25,7 @@ gulp.task('build-js', function () {
             prismBasePath + 'components/prism-less.js',
             prismBasePath + 'components/prism-php-extras.js',
             prismBasePath + 'components/prism-sql.js',
+            customBasePath + 'prism-typoscript.js',
             prismBasePath + 'plugins/file-highlight/prism-file-highlight.js',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.js',
             prismBasePath + 'plugins/show-language/prism-show-language.js',
