@@ -56,13 +56,16 @@ call_user_func(function () {
             --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
             programming_language,pi_flexform,
             bodytext,
+            --div--;' . $frontendLanguageFilePrefix . 'tabs.appearance,
+				layout;' . $frontendLanguageFilePrefix . 'layout_formlabel,
+				--palette--;' . $frontendLanguageFilePrefix . 'palette.appearanceLinks;appearanceLinks,
             --div--;' . $frontendLanguageFilePrefix . 'tabs.access,
                 hidden;' . $frontendLanguageFilePrefix . 'field.default.hidden,
                 --palette--;' . $frontendLanguageFilePrefix . 'palette.access;access,
         ',
     ];
 
-    // Overwrite behavior of bodytext for fs_code_snippet
+    // Overwrite behavior of bodytext and pi_flexform for fs_code_snippet
     $GLOBALS['TCA']['tt_content']['types']['fs_code_snippet']['columnsOverrides'] = [
         'bodytext' => [
             'label' => 'Code Snippet',

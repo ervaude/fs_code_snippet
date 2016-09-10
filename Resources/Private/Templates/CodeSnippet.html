@@ -8,21 +8,19 @@
 <f:section name="content">
 <f:if condition="{commandline}">
 	<f:then>
-<pre
-	class="language-{programmingLanguage} command-line"
-	data-language="{programmingLanguage}"
-	{f:if(condition:commandline.promt, then: ' data-prompt="{commandline.promt}"', else: ' data-user="{commandline.user}" data-host="{commandline.host}"')}
-	{f:if(condition:commandline.output, then:' data-output="{commandline.output}"')}
->
-<code class="language-{programmingLanguage}">{data.bodytext}</code>
-</pre>
+		<pre
+			class="language-{programmingLanguage} command-line"
+			data-language="{programmingLanguage}"
+			{f:if(condition:commandline.promt, then: ' data-prompt="{commandline.promt}"', else: ' data-user="{commandline.user}" data-host="{commandline.host}"')}
+			{f:if(condition:commandline.output, then:' data-output="{commandline.output}"')}
+		>
 	</f:then>
 	<f:else>
-<pre class="language-{programmingLanguage} line-numbers" data-language="{programmingLanguage}">
-<code class="language-{programmingLanguage}">{data.bodytext}</code>
-</pre>
+		<pre class="language-{programmingLanguage}{f:if(condition:lineNumbers, then:' line-numbers')}" data-language="{programmingLanguage}">
 	</f:else>
 </f:if>
+<code class="language-{programmingLanguage}">{data.bodytext}</code>
+</pre>
 </f:section>
 
 </body>
