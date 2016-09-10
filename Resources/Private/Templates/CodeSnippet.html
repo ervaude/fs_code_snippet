@@ -16,7 +16,7 @@
 		>
 	</f:then>
 	<f:else>
-		<pre class="language-{programmingLanguage} line-numbers" data-language="{programmingLanguage}">
+		<pre class="language-{programmingLanguage}{f:if(condition:lineNumbers, then:' line-numbers')}" data-language="{programmingLanguage}">
 	</f:else>
 </f:if>
 <code class="language-{programmingLanguage}">{data.bodytext}</code>

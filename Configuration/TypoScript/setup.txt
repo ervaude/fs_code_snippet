@@ -9,6 +9,7 @@ tt_content {
 		templateName = CodeSnippet
 		dataProcessing {
 			10 = DanielGoerz\FsCodeSnippet\DataProcessing\CodeSnippetProcessor
+			10.lineNumbers = {$plugin.tx_fscodesnippet.settings.lineNumbers}
 		}
 	}
 }

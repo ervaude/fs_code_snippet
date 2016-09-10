@@ -6,5 +6,7 @@ plugin.tx_fscodesnippet {
 	settings {
 		# cat=plugin.tx_fscodesnippet/option; type=options [Default=,Okaidia=-okaidia,Dark=-dark,Coy=-coy,Funky=-funky,Tomorrow=-tomorrow,Twilight=-twilight]; label=Theme for Code Snippets
 		theme = -okaidia
+		# cat=plugin.tx_fscodesnippet/option; type=boolean; label=Enable line numbers.
+		lineNumbers = 1
 	}
 }
