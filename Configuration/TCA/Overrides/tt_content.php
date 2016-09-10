@@ -62,7 +62,7 @@ call_user_func(function () {
         ',
     ];
 
-    // Overwrite behavior of bodytext for fs_code_snippet
+    // Overwrite behavior of bodytext and pi_flexform for fs_code_snippet
     $GLOBALS['TCA']['tt_content']['types']['fs_code_snippet']['columnsOverrides'] = [
         'bodytext' => [
             'label' => 'Code Snippet',
