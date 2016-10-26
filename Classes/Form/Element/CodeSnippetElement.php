@@ -20,6 +20,7 @@ use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
  * CodeSnippetElement FormEngine widget
  *
  * Makes sure we load the correct tokenizer and js for the T3Editor
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetElement extends T3editorElement
 {

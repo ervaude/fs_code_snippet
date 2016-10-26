@@ -19,12 +19,13 @@ use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
-use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
  * This data processor will map the internally used string for a programming language
  * to the string that the prism.js library expects. Internally not known types are
  * let through unchanged.
+ *
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetProcessor implements DataProcessorInterface
 {
@@ -40,10 +41,11 @@ class CodeSnippetProcessor implements DataProcessorInterface
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
+        $processedData['commandline'] = [];
         // Map the T3editorElement constants to the string expected by prism
         switch ($processedData['data']['programming_language']) {
-            case T3editorElement::MODE_HTML:
-            case T3editorElement::MODE_XML:
+            case CodeSnippetLanguage::HTML:
+            case CodeSnippetLanguage::XML:
                 $programmingLanguage = 'markup';
                 break;
             case CodeSnippetLanguage::COMMANDLINE:

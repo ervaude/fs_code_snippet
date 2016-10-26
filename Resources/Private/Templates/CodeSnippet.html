@@ -1,27 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
- 	 xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
-<body>
-
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:cs="http://typo3.org/ns/DanielGoerz/FsCodeSnippet/ViewHelpers">
 <f:layout name="HeaderContentFooter" />
-
 <f:section name="content">
-<f:if condition="{commandline}">
-	<f:then>
-		<pre
-			class="language-{programmingLanguage} command-line"
-			data-language="{programmingLanguage}"
-			{f:if(condition:commandline.promt, then: ' data-prompt="{commandline.promt}"', else: ' data-user="{commandline.user}" data-host="{commandline.host}"')}
-			{f:if(condition:commandline.output, then:' data-output="{commandline.output}"')}
-		>
-	</f:then>
-	<f:else>
-		<pre class="language-{programmingLanguage}{f:if(condition:lineNumbers, then:' line-numbers')}" data-language="{programmingLanguage}">
-	</f:else>
-</f:if>
-<code class="language-{programmingLanguage}">{data.bodytext}</code>
-</pre>
-</f:section>
 
-</body>
+<cs:codeSnippet commandLine="{commandline}" lineNumbers="{lineNumbers}" programmingLanguage="{programmingLanguage}">
+<code class="language-{programmingLanguage}">{data.bodytext}</code>
+</cs:codeSnippet>
+
+</f:section>
 </html>

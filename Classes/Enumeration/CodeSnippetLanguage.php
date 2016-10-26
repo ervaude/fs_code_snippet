@@ -16,10 +16,15 @@ namespace DanielGoerz\FsCodeSnippet\Enumeration;
 use TYPO3\CMS\Core\Type\Enumeration;
 
 /**
- * Enumeration object for DuplicationBehavior
+ * Enumeration object for supported CodeSnippetLanguages
+ *
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetLanguage extends Enumeration
 {
+    const HTML = 'html';
+    const XML = 'xml';
+    const TYPOSCRIPT = 'typoscript';
     const MARKUP = 'markup';
     const CSS = 'css';
     const C_LIKE = 'clike';
