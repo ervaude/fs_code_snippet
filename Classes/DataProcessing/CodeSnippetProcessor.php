@@ -14,6 +14,7 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
+use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -43,8 +44,8 @@ class CodeSnippetProcessor implements DataProcessorInterface
         $processedData['commandline'] = [];
         // Map the T3editorElement constants to the string expected by prism
         switch ($processedData['data']['programming_language']) {
-            case T3editorElement::MODE_HTML:
-            case T3editorElement::MODE_XML:
+            case CodeSnippetLanguage::HTML:
+            case CodeSnippetLanguage::XML:
                 $programmingLanguage = 'markup';
                 break;
             case CodeSnippetLanguage::COMMANDLINE:
@@ -60,6 +61,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
         $processedData['programmingLanguage'] = $programmingLanguage;
         $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
         $processedData['lineNumbers'] = !empty($processorConfiguration['lineNumbers']);
+        FsCodeSnippetConfigurationUtility::getItemArrayForAllLanguages();
         return $processedData;
     }
 

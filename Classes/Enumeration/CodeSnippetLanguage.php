@@ -20,6 +20,9 @@ use TYPO3\CMS\Core\Type\Enumeration;
  */
 class CodeSnippetLanguage extends Enumeration
 {
+    const HTML = 'html';
+    const XML = 'xml';
+    const TYPOSCRIPT = 'typoscript';
     const MARKUP = 'markup';
     const CSS = 'css';
     const C_LIKE = 'clike';

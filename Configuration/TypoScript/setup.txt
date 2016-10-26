@@ -14,9 +14,8 @@ tt_content {
 	}
 }
 
-page.includeJSFooter {
-	fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippet.js
-}
+page.includeJSFooter.fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippet.js
+
 page.includeCSS {
 	fsCodeSnippetMain = EXT:fs_code_snippet/Resources/Public/CSS/prism{$plugin.tx_fscodesnippet.settings.theme}.css
 	fsCodeSnippetMainShowLanguage = EXT:fs_code_snippet/Resources/Public/CSS/prism-show-language.css
@@ -25,4 +24,8 @@ page.includeCSS {
 
 [globalVar = LIT:1 = {$plugin.tx_fscodesnippet.settings.lineNumbers}]
 	page.includeCSS.fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
+[global]
+
+[DanielGoerz\FsCodeSnippet\Configuration\TypoScript\ConditionMatching\AllLanguagesCondition]
+page.includeJSFooter.fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippetAllLanguages.js
 [global]

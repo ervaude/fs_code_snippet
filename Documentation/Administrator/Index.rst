@@ -33,7 +33,7 @@ To install the extension, perform the following steps:
 Configuration
 -------------
 
-All configuration is done via TypoScript constants which are editable in the constant editor in the TYPO3 backend.
+Most configuration is done via TypoScript constants which are editable in the constant editor in the TYPO3 backend.
 
 * The TemplateRootPath can be overwritten with constant `{$plugin.tx_fscodesnippet.view.templateRootPath}`. However the fallback mechanism of
 `FLUIDTEMPLATE` could be used as well to override the default template.
@@ -41,3 +41,11 @@ All configuration is done via TypoScript constants which are editable in the con
 * In the constant editor the **theme** of the code snippet can be adjusted according to the themes shipped by prism.js.
 
 * Line numbers are enabled by default. They can be disabled globally with the constant `{$plugin.tx_fscodesnippet.settings.lineNumbers}`.
+
+It is also possible to enable **all** programming languages supported by prism.js. This can only be done in the extension manager
+module.
+
+
+.. important::
+
+    Please be aware that the included JavaScript file will have a size of roughly 230kb instead of 60kb if this option is activated.
