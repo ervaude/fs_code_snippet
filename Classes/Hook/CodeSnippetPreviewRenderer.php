@@ -18,10 +18,11 @@ use TYPO3\CMS\Backend\View\PageLayoutView;
 
 /**
  * Contains a preview rendering for the page module of CType="fs_code_snippet"
+ *
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 {
-
     /**
      * Preprocesses the preview rendering of a content element of type "fs_code_snippet"
      *

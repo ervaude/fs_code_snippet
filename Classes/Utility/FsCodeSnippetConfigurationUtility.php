@@ -1,5 +1,4 @@
 <?php
-
 namespace DanielGoerz\FsCodeSnippet\Utility;
 
 /**
@@ -15,7 +14,6 @@ namespace DanielGoerz\FsCodeSnippet\Utility;
  * The TYPO3 project - inspiring people to share!
  */
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
@@ -47,9 +45,11 @@ class FsCodeSnippetConfigurationUtility
     }
 
     /**
+     * Returns the TCA Item array with all supported languages.
+     *
      * @return array
      */
-    public static function getItemArrayForAllLanguages()
+    private static function getItemArrayForAllLanguages()
     {
         $supportedLanguages = CodeSnippetLanguage::getConstants();
         $items = [];

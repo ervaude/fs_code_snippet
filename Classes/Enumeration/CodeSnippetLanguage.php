@@ -16,7 +16,9 @@ namespace DanielGoerz\FsCodeSnippet\Enumeration;
 use TYPO3\CMS\Core\Type\Enumeration;
 
 /**
- * Enumeration object for DuplicationBehavior
+ * Enumeration object for supported CodeSnippetLanguages
+ *
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetLanguage extends Enumeration
 {

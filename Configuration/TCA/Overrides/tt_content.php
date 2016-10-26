@@ -1,6 +1,4 @@
 <?php
-use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
-
 defined('TYPO3_MODE') or die();
 
 call_user_func(function () {
@@ -28,7 +26,7 @@ call_user_func(function () {
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
+                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
                 'default' => \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_MIXED
             ]
         ]

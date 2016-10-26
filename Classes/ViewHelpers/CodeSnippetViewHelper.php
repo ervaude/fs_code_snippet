@@ -22,7 +22,6 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
  */
 class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 {
-
     /**
      * @var string
      */

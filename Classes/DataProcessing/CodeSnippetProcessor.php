@@ -14,18 +14,18 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  * The TYPO3 project - inspiring people to share!
  */
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
-use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
  * This data processor will map the internally used string for a programming language
  * to the string that the prism.js library expects. Internally not known types are
  * let through unchanged.
+ *
+ * @author Daniel Goerz <ervaude@gmail.com>
  */
 class CodeSnippetProcessor implements DataProcessorInterface
 {
@@ -61,7 +61,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
         $processedData['programmingLanguage'] = $programmingLanguage;
         $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
         $processedData['lineNumbers'] = !empty($processorConfiguration['lineNumbers']);
-        FsCodeSnippetConfigurationUtility::getItemArrayForAllLanguages();
         return $processedData;
     }
 
