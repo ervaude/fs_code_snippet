@@ -11,10 +11,10 @@ $EM_CONF[$_EXTKEY] = [
     'createDirs'       => '',
     'clearCacheOnLoad' => 1,
     'author_company'   => '',
-    'version'          => '1.6.1',
+    'version'          => '1.7.0',
     'constraints'      => [
         'depends'   => [
-            'typo3' => '7.6.0-8.4.99',
+            'typo3' => '7.6.0-8.6.99',
             'fluid_styled_content' => '',
             't3editor' => ''
         ],

@@ -15,6 +15,7 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  */
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -42,23 +43,16 @@ class CodeSnippetProcessor implements DataProcessorInterface
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
         $processedData['commandline'] = [];
-        // Map the T3editorElement constants to the string expected by prism
-        switch ($processedData['data']['programming_language']) {
-            case CodeSnippetLanguage::HTML:
-            case CodeSnippetLanguage::XML:
-                $programmingLanguage = 'markup';
-                break;
-            case CodeSnippetLanguage::COMMANDLINE:
-                $programmingLanguage = CodeSnippetLanguage::BASH;
-                $flexFormContent = $this->getFlexFormContentAsArray($processedData['data']['pi_flexform']);
-                if (!empty($flexFormContent['settings']['commandline'])) {
-                    $processedData['commandline'] = $flexFormContent['settings']['commandline'];
-                }
-                break;
-            default:
-                $programmingLanguage = $processedData['data']['programming_language'];
+        $processedData['layout'] = $this->getLayoutName();
+
+        if ($processedData['data']['programming_language'] === CodeSnippetLanguage::COMMANDLINE) {
+            $flexFormContent = $this->getFlexFormContentAsArray($processedData['data']['pi_flexform']);
+            if (!empty($flexFormContent['settings']['commandline'])) {
+                $processedData['commandline'] = $flexFormContent['settings']['commandline'];
+            }
         }
-        $processedData['programmingLanguage'] = $programmingLanguage;
+
+        $processedData['programmingLanguage'] = $this->getProgrammingLanguageStringForPrism($processedData['data']['programming_language']);
         $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
         $processedData['lineNumbers'] = !empty($processorConfiguration['lineNumbers']);
         return $processedData;
@@ -68,10 +62,43 @@ class CodeSnippetProcessor implements DataProcessorInterface
      * @param string $flexFormContent
      * @return array
      */
-    protected function getFlexFormContentAsArray($flexFormContent)
+    private function getFlexFormContentAsArray($flexFormContent)
     {
         /** @var FlexFormService $flexFormService */
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         return $flexFormService->convertFlexFormContentToArray($flexFormContent);
+    }
+
+    /**
+     * Since TYPO3 8.6 the layout structure of fluid_styled_content has changed.
+     * This method returns the correct layout name for the used TYPO3 version.
+     *
+     * @return string
+     */
+    private function getLayoutName()
+    {
+        if (VersionNumberUtility::convertVersionNumberToInteger(TYPO3_branch) >= VersionNumberUtility::convertVersionNumberToInteger('8.6')) {
+            return 'Default';
+        }
+        return 'HeaderContentFooter';
+    }
+
+    /**
+     * Map the CodeSnippetLanguage constants to the string expected by prism where they differ
+     *
+     * @param string $programmingLanguage
+     * @return string
+     */
+    private function getProgrammingLanguageStringForPrism($programmingLanguage)
+    {
+        switch ($programmingLanguage) {
+            case CodeSnippetLanguage::HTML:
+            case CodeSnippetLanguage::XML:
+                return CodeSnippetLanguage::MARKUP;
+            case CodeSnippetLanguage::COMMANDLINE:
+                return CodeSnippetLanguage::BASH;
+            default:
+                return $programmingLanguage;
+        }
     }
 }
