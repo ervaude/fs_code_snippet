@@ -3,7 +3,7 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     privatePath = 'Resources/Private/',
-    prismBasePath = privatePath +'bower_components/prism/',
+    prismBasePath = privatePath + 'bower_components/prism/',
     customBasePath = privatePath + 'JavaScript/';
 
 gulp.task('build', function () {
@@ -27,6 +27,7 @@ gulp.task('build-js', function () {
             prismBasePath + 'components/prism-php-extras.min.js',
             prismBasePath + 'components/prism-sql.min.js',
             customBasePath + 'prism-typoscript.js',
+            prismBasePath + 'plugins/toolbar/prism-toolbar.min.js',
             prismBasePath + 'plugins/file-highlight/prism-file-highlight.min.js',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.min.js',
             prismBasePath + 'plugins/show-language/prism-show-language.min.js',
@@ -52,6 +53,7 @@ gulp.task('build-all-languages-js', function () {
 
         prismBasePath + 'components/prism-abap.min.js',
         prismBasePath + 'components/prism-actionscript.min.js',
+        prismBasePath + 'components/prism-ada.min.js',
         prismBasePath + 'components/prism-apacheconf.min.js',
         prismBasePath + 'components/prism-apl.min.js',
         prismBasePath + 'components/prism-applescript.min.js',
@@ -84,6 +86,7 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-git.min.js',
         prismBasePath + 'components/prism-glsl.min.js',
         prismBasePath + 'components/prism-go.min.js',
+        prismBasePath + 'components/prism-graphql.min.js',
         prismBasePath + 'components/prism-groovy.min.js',
         prismBasePath + 'components/prism-haml.min.js',
         prismBasePath + 'components/prism-handlebars.min.js',
@@ -97,11 +100,13 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-jade.min.js',
         prismBasePath + 'components/prism-java.min.js',
         prismBasePath + 'components/prism-json.min.js',
+        prismBasePath + 'components/prism-jolie.min.js',
         prismBasePath + 'components/prism-jsx.min.js',
         prismBasePath + 'components/prism-julia.min.js',
         prismBasePath + 'components/prism-keyman.min.js',
         prismBasePath + 'components/prism-kotlin.min.js',
         prismBasePath + 'components/prism-latex.min.js',
+        prismBasePath + 'components/prism-livescript.min.js',
         prismBasePath + 'components/prism-less.min.js',
         prismBasePath + 'components/prism-lolcode.min.js',
         prismBasePath + 'components/prism-lua.min.js',
@@ -129,12 +134,14 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-processing.min.js',
         prismBasePath + 'components/prism-prolog.min.js',
         prismBasePath + 'components/prism-protobuf.min.js',
+        prismBasePath + 'components/prism-properties.min.js',
         prismBasePath + 'components/prism-puppet.min.js',
         prismBasePath + 'components/prism-pure.min.js',
         prismBasePath + 'components/prism-python.min.js',
         prismBasePath + 'components/prism-q.min.js',
         prismBasePath + 'components/prism-qore.min.js',
         prismBasePath + 'components/prism-r.min.js',
+        prismBasePath + 'components/prism-reason.min.js',
         prismBasePath + 'components/prism-rest.min.js',
         prismBasePath + 'components/prism-rip.min.js',
         prismBasePath + 'components/prism-roboconf.min.js',
@@ -157,11 +164,14 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-vhdl.min.js',
         prismBasePath + 'components/prism-vim.min.js',
         prismBasePath + 'components/prism-wiki.min.js',
+        prismBasePath + 'components/prism-xojo.min.js',
         prismBasePath + 'components/prism-yaml.min.js',
         customBasePath + 'prism-typoscript.js',
+        prismBasePath + 'plugins/toolbar/prism-toolbar.min.js',
         prismBasePath + 'plugins/file-highlight/prism-file-highlight.min.js',
         prismBasePath + 'plugins/line-numbers/prism-line-numbers.min.js',
         prismBasePath + 'plugins/show-language/prism-show-language.min.js',
+        prismBasePath + 'plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js',
         prismBasePath + 'plugins/command-line/prism-command-line.min.js'
     ])
         .pipe(concat('FsCodeSnippetAllLanguages.js'))
@@ -173,6 +183,7 @@ gulp.task('build-css', function () {
     'use strict';
     return gulp.src([
             prismBasePath + 'themes/*.css',
+            prismBasePath + 'plugins/toolbar/prism-toolbar.css',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.css',
             prismBasePath + 'plugins/show-language/prism-show-language.css',
             prismBasePath + 'plugins/command-line/prism-command-line.css'

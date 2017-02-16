@@ -31,6 +31,7 @@ class CodeSnippetLanguage extends Enumeration
     const JAVASCRIPT = 'javascript';
     const ABAP = 'abap';
     const ACTIONSCRIPT = 'actionscript';
+    const ADA = 'ada';
     const APACHE_CONFIGURATION = 'apacheconf';
     const APL = 'apl';
     const APPLESCRIPT = 'applescript';
@@ -61,6 +62,7 @@ class CodeSnippetLanguage extends Enumeration
     const GIT = 'git';
     const GLSL = 'glsl';
     const GO = 'go';
+    const GRAPHQL = 'graphql';
     const GROOVY = 'groovy';
     const HAML = 'haml';
     const HANDLEBARS = 'handlebars';
@@ -73,12 +75,14 @@ class CodeSnippetLanguage extends Enumeration
     const J = 'j';
     const JADE = 'jade';
     const JAVA = 'java';
+    const JOLIE = 'jolie';
     const JSON = 'json';
     const JULIA = 'julia';
     const KEYMAN = 'keyman';
     const KOTLIN = 'kotlin';
     const LATEX = 'latex';
     const LESS = 'less';
+    const LIVESCRIPT = 'livescript';
     const LOLCODE = 'lolcode';
     const LUA = 'lua';
     const MAKEFILE = 'makefile';
@@ -103,12 +107,14 @@ class CodeSnippetLanguage extends Enumeration
     const POWERSHELL = 'powershell';
     const PROCESSING = 'processing';
     const PROLOG = 'prolog';
+    const PROPERTIES = 'properties';
     const PUPPET = 'puppet';
     const PURE = 'pure';
     const PYTHON = 'python';
     const Q = 'q';
     const QORE = 'qore';
     const R = 'r';
+    const REASON = 'reason';
     const REACT_JSX = 'jsx';
     const REST = 'rest';
     const RIP = 'rip';
@@ -133,6 +139,7 @@ class CodeSnippetLanguage extends Enumeration
     const VHDL = 'vhdl';
     const VIM = 'vim';
     const WIKI_MARKUP = 'wiki';
+    const XOJO = 'xojo';
     const YAML = 'yaml';
 
     const COMMANDLINE = 'commandline';
