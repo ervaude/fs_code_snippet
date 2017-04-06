@@ -24,7 +24,7 @@ use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 class FsCodeSnippetConfigurationUtility
 {
     /**
-     * Returns the extension configuration for lw_events_admin as array.
+     * Returns the extension configuration for fs_code_snippet as array.
      *
      * @return array
      */
@@ -34,7 +34,7 @@ class FsCodeSnippetConfigurationUtility
     }
 
     /**
-     * Returns whether the pdf invoice generation is enabled in the extension manager
+     * Returns whether all languages are enabled in the extension manager
      *
      * @return bool
      */
@@ -190,6 +190,8 @@ class FsCodeSnippetConfigurationUtility
     }
 
     /**
+     * Provides item array for TCA
+     *
      * @return array
      */
     public static function getItemArrayForTCA()
