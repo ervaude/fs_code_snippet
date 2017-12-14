@@ -1,7 +1,7 @@
 {
   "name": "danielgoerz/fs-code-snippet",
   "type": "typo3-cms-extension",
-  "description": "A content element to render code snippet of various programming languages.",
+  "description": "A content element to render code snippets of various programming languages.",
   "keywords": [
     "TYPO3",
     "extension",
