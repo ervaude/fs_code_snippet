@@ -48,6 +48,7 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-css.min.js',
         prismBasePath + 'components/prism-clike.min.js',
         prismBasePath + 'components/prism-c.min.js',
+        prismBasePath + 'components/prism-cpp.min.js',
         prismBasePath + 'components/prism-javascript.min.js',
         prismBasePath + 'components/prism-ruby.min.js',
 
@@ -69,7 +70,6 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-brainfuck.min.js',
         prismBasePath + 'components/prism-bro.min.js',
         prismBasePath + 'components/prism-coffeescript.min.js',
-        prismBasePath + 'components/prism-cpp.min.js',
         prismBasePath + 'components/prism-crystal.min.js',
         prismBasePath + 'components/prism-csharp.min.js',
         prismBasePath + 'components/prism-css.min.js',
