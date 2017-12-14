@@ -24,11 +24,11 @@ In any extension of yours, create the file `Configuration/TCA/Overrides/tt_conte
 
 .. code-block:: php
 
-    $GLOBALS['TCA']['tt_content']['columns']['programming_langauge']['config']['items'][] = ['Python' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PYTHON];
+    $GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'][] = ['Python' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PYTHON];
 
 You can add every language identifier that prism supports. Anyway the T3Editor won't know that syntax and will run in "mixed" mode.
 
-To enable the syntax highlightning in the frontend you need to include the corresponding JavaScript component from prism.js. In case of python
+To enable the syntax highlighting in the frontend you need to include the corresponding JavaScript component from prism.js. In case of python
 this would be components/prism-python.js. You can either download the component from prismjs.com or github or you can use the
 gulp build shipped with this extension to generate a new all-in-one file.
 
@@ -37,11 +37,9 @@ To do so, go to the extension folder and edit the `gulpfile` to also include the
 
 .. code-block:: bash
 
-    bower install
     npm install
     gulp build
 
-Make sure the `.bowerrc` file is present to download the prism.js library to the folder where gulp expect it to be.
 Now you should have a `FsCodeSnippet.js` that supports Python.
 
 .. important::
