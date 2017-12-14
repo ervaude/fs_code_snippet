@@ -219,7 +219,8 @@ class FsCodeSnippetConfigurationUtility
             ['JSON',            CodeSnippetLanguage::JSON],
             ['PHP',             CodeSnippetLanguage::PHP],
             ['Typoscript',      CodeSnippetLanguage::TYPOSCRIPT],
-            ['XML',             CodeSnippetLanguage::XML]
+            ['XML',             CodeSnippetLanguage::XML],
+            ['YAML',            CodeSnippetLanguage::YAML]
         ];
     }
 }
