@@ -35,6 +35,7 @@ class CodeSnippetLanguage extends Enumeration
     const APACHE_CONFIGURATION = 'apacheconf';
     const APL = 'apl';
     const APPLESCRIPT = 'applescript';
+    const ARDUINO = 'arduino';
     const ASCIIDOC = 'asciidoc';
     const ASP_NET = 'aspnet';
     const AUTOIT = 'autoit';
@@ -52,6 +53,7 @@ class CodeSnippetLanguage extends Enumeration
     const D = 'd';
     const DART = 'dart';
     const DIFF = 'diff';
+    const DJANGO = 'django';
     const DOCKER = 'docker';
     const EIFFEL = 'eiffel';
     const ELIXIR = 'elixir';
@@ -91,6 +93,7 @@ class CodeSnippetLanguage extends Enumeration
     const MEL = 'mel';
     const MIZAR = 'mizar';
     const MONKEY = 'monkey';
+    const N4JS = 'n4js';
     const NASM = 'nasm';
     const NGINX = 'nginx';
     const NIM = 'nim';
@@ -98,6 +101,7 @@ class CodeSnippetLanguage extends Enumeration
     const NSIS = 'nsis';
     const OBJECTIVE_C = 'objectivec';
     const OCAML = 'ocaml';
+    const OPENCL = 'opencl';
     const OZ = 'oz';
     const PARI_GP = 'parigp';
     const PARSER = 'parser';
@@ -115,6 +119,7 @@ class CodeSnippetLanguage extends Enumeration
     const QORE = 'qore';
     const R = 'r';
     const REASON = 'reason';
+    const RENPY = 'renpy';
     const REACT_JSX = 'jsx';
     const REST = 'rest';
     const RIP = 'rip';
@@ -135,6 +140,7 @@ class CodeSnippetLanguage extends Enumeration
     const TEXTILE = 'textile';
     const TWIG = 'twig';
     const TYPESCRIPT = 'typescript';
+    const VBNET = 'vbnet';
     const VERILOG = 'verilog';
     const VHDL = 'vhdl';
     const VIM = 'vim';

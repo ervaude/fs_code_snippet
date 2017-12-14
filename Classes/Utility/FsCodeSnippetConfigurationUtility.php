@@ -123,6 +123,9 @@ class FsCodeSnippetConfigurationUtility
                 case CodeSnippetLanguage::MEL:
                     $label = 'MEL';
                     break;
+                case CodeSnippetLanguage::N4JS:
+                    $label = 'N4JS';
+                    break;
                 case CodeSnippetLanguage::NASM:
                     $label = 'NASM';
                     break;
@@ -137,6 +140,9 @@ class FsCodeSnippetConfigurationUtility
                     break;
                 case CodeSnippetLanguage::OCAML:
                     $label = 'OCaml';
+                    break;
+                case CodeSnippetLanguage::OPENCL:
+                    $label = 'OpenCL';
                     break;
                 case CodeSnippetLanguage::PARI_GP:
                     $label = 'PARI/GP';
@@ -167,6 +173,9 @@ class FsCodeSnippetConfigurationUtility
                     break;
                 case CodeSnippetLanguage::TYPOSCRIPT:
                     $label = 'TypoScript';
+                    break;
+                case CodeSnippetLanguage::VBNET:
+                    $label = 'VB.NET';
                     break;
                 case CodeSnippetLanguage::VIM:
                     $label = 'vim';
@@ -210,7 +219,8 @@ class FsCodeSnippetConfigurationUtility
             ['JSON',            CodeSnippetLanguage::JSON],
             ['PHP',             CodeSnippetLanguage::PHP],
             ['Typoscript',      CodeSnippetLanguage::TYPOSCRIPT],
-            ['XML',             CodeSnippetLanguage::XML]
+            ['XML',             CodeSnippetLanguage::XML],
+            ['YAML',            CodeSnippetLanguage::YAML]
         ];
     }
 }
