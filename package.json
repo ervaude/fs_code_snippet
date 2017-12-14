@@ -7,10 +7,12 @@
         "type": "git",
         "url": "https://github.com/ervaude/fs_code_snippet.git"
     },
+    "license": "GPL-2.0+",
     "author": "Daniel Goerz",
     "devDependencies": {
         "gulp": "3.9.1",
         "gulp-concat": "2.6.1",
-        "gulp-uglify": "2.0.1"
+        "gulp-uglify": "2.0.1",
+        "prismjs": "1.6.0"
     }
 }

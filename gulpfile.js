@@ -3,7 +3,7 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     privatePath = 'Resources/Private/',
-    prismBasePath = privatePath + 'bower_components/prism/',
+    prismBasePath = 'node_modules/prismjs/',
     customBasePath = privatePath + 'JavaScript/';
 
 gulp.task('build', function () {
