@@ -15,9 +15,7 @@
       "homepage": "https://usetypo3.com"
     }
   ],
-  "license": [
-    "GPL-2.0+"
-  ],
+  "license": ["GPL-2.0-or-later"],
   "require": {
     "typo3/cms-core": ">=7.6.0 || >=8.7.0"
   },
