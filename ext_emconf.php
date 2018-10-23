@@ -6,15 +6,15 @@ $EM_CONF[$_EXTKEY] = [
     'category'         => 'fe',
     'author'           => 'Daniel Goerz',
     'author_email'     => 'ervaude@gmail.com',
-    'state'            => 'stable',
+    'state'            => 'beta',
     'uploadfolder'     => false,
     'createDirs'       => '',
     'clearCacheOnLoad' => 1,
     'author_company'   => '',
-    'version'          => '1.9.0',
+    'version'          => '2.0.0',
     'constraints'      => [
         'depends'   => [
-            'typo3' => '7.6.0-8.7.99',
+            'typo3' => '>=9.5.0',
             'fluid_styled_content' => '',
             't3editor' => ''
         ],
