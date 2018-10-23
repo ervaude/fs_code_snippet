@@ -29,18 +29,8 @@ class CodeSnippetElement extends T3editorElement
      *
      * @return array As defined in initializeResultArray() of AbstractNode
      */
-    public function render()
+    public function render(): array
     {
-        $this->allowSupportedLanguages();
-        if (!empty($this->data['databaseRow']['programming_language'][0])) {
-            $this->data['parameterArray']['fieldConf']['config']['format'] = $this->data['databaseRow']['programming_language'][0];
-        }
-        try {
-            return parent::render();
-        } catch (\InvalidArgumentException $e) {
-            // Format not allowed internally
-            $this->data['parameterArray']['fieldConf']['config']['format'] = parent::MODE_MIXED;
-        }
         return parent::render();
     }
 

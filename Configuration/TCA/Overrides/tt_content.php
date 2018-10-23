@@ -26,15 +26,12 @@ call_user_func(function () {
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
-                'default' => \TYPO3\CMS\T3editor\Form\Element\T3editorElement::MODE_MIXED
+                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA()
             ]
         ]
     ];
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $newColumn);
 
-    // Reload on change
-    $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] .= ',programming_language';
     // Use type icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['fs_code_snippet'] = 'fs-code-snippet';
     // What fields should be displayed

@@ -1,10 +1,10 @@
-lib.fluidContent {
+lib.contentElement {
 	templateRootPaths {
 		1450878401 = {$plugin.tx_fscodesnippet.view.templateRootPath}
 	}
 }
 tt_content {
-	fs_code_snippet =< lib.fluidContent
+	fs_code_snippet =< lib.contentElement
 	fs_code_snippet {
 		templateName = CodeSnippet
 		dataProcessing {

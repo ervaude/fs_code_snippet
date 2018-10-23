@@ -209,7 +209,6 @@ class FsCodeSnippetConfigurationUtility
             return self::getItemArrayForAllLanguages();
         }
         return [
-            ['None',            T3editorElement::MODE_MIXED],
             ['Apache Config',   CodeSnippetLanguage::APACHE_CONFIGURATION],
             ['Bash',            CodeSnippetLanguage::BASH],
             ['Command-line',    CodeSnippetLanguage::COMMANDLINE],
