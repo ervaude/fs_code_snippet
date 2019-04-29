@@ -21,6 +21,7 @@ call_user_func(function () {
     // Add the column programming_language too tt_content
     $newColumn = [
         'programming_language' => [
+            'onChange' => 'reload',
             'exclude' => true,
             'label' => 'Programming Language',
             'config' => [
