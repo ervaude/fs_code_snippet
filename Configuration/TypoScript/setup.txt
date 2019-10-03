@@ -27,6 +27,6 @@ page.includeCSS {
 	page.includeCSS.fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
 [global]
 
-[DanielGoerz\FsCodeSnippet\Configuration\TypoScript\ConditionMatching\AllLanguagesCondition]
+[fsCodeSnippet.allLanguages()]
 page.includeJSFooter.fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippetAllLanguages.js
 [global]
