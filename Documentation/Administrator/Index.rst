@@ -28,7 +28,7 @@ To install the extension, perform the following steps:
 #. Load the static template
 
 
-.. _admin-condifuration:
+.. _admin-configuration:
 
 Configuration
 -------------

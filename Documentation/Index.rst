@@ -19,7 +19,7 @@ Code Snippet CE (fs_code_snippet)
       en
 
 :Copyright:
-      2015
+      2019
 
 :Author:
       Daniel Goerz
@@ -32,7 +32,7 @@ Code Snippet CE (fs_code_snippet)
       |today|
 
       The content of this document is related to TYPO3,
-      a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
+      a GNU/GPL CMS/Framework available from `www.typo3.org <https://www.typo3.org/>`_.
 
 
 **Table of Contents**

@@ -27,4 +27,4 @@ Links
 		`@ervaude <https://twitter.com/ervaude>`__
 
 :Prism.js:
-		http://prismjs.com
+		https://prismjs.com

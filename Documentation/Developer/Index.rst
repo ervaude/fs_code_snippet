@@ -32,12 +32,12 @@ To enable the syntax highlighting in the frontend you need to include the corres
 this would be components/prism-python.js. You can either download the component from prismjs.com or github or you can use the
 gulp build shipped with this extension to generate a new all-in-one file.
 
-To do so, go to the extension folder and edit the `gulpfile` to also include the components you need in the `build-js` task
+To do so, go to the extension folder and edit the `gulpfile` to also include the components you need in the `buildJs` task
 (e.g. `prismBasePath + 'components/prism-python.js'`). Then run
 
 .. code-block:: bash
 
-    npm install
+    yarn install
     gulp build
 
 Now you should have a `FsCodeSnippet.js` that supports Python.
