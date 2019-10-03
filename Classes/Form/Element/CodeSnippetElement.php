@@ -17,10 +17,10 @@ use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
- * CodeSnippetElement FormEngine widget
+ * CodeSnippet FormEngine Element
  *
- * Makes sure we load the correct tokenizer and js for the T3Editor
- * @author Daniel Goerz <ervaude@gmail.com>
+ * Makes sure we load the correct codemirror mode for the T3Editor
+ * @author Daniel Goerz <usetypo3@posteo.de>
  */
 class CodeSnippetElement extends T3editorElement
 {
@@ -31,35 +31,31 @@ class CodeSnippetElement extends T3editorElement
      */
     public function render(): array
     {
+        switch ($this->data['databaseRow']['programming_language'][0] ?? '') {
+            case CodeSnippetLanguage::PHP:
+                $identifier = 'php';
+                break;
+            case CodeSnippetLanguage::JAVASCRIPT:
+                $identifier = 'javascript';
+                break;
+            case CodeSnippetLanguage::TYPOSCRIPT:
+                $identifier = 'typoscript';
+                break;
+            case CodeSnippetLanguage::MARKUP:
+            case CodeSnippetLanguage::XML:
+                $identifier = 'html';
+                break;
+            case CodeSnippetLanguage::CSS:
+                $identifier = 'css';
+                break;
+            default:
+                $identifier = '';
+        }
+        if (empty($identifier)) {
+            unset($this->data['parameterArray']['fieldConf']['config']['format']);
+        } else {
+            $this->data['parameterArray']['fieldConf']['config']['format'] = $identifier;
+        }
         return parent::render();
-    }
-
-    /**
-     * Determine the correct parser js file for given mode
-     *
-     * @param string $mode
-     * @return string Parser file name
-     */
-    protected function getParserfileByMode($mode)
-    {
-        if ($mode === self::MODE_PHP) {
-            return json_encode(['../contrib/php/js/tokenizephp.js', '../contrib/php/js/parsephp.js']);
-        }
-        $parserfile = parent::getParserfileByMode($mode);
-        if ($parserfile === '[]') {
-            return parent::getParserfileByMode(parent::MODE_MIXED);
-        }
-        return $parserfile;
-    }
-
-    /**
-     * @return void
-     */
-    protected function allowSupportedLanguages()
-    {
-        $supportedLanguages = CodeSnippetLanguage::getConstants();
-        foreach ($supportedLanguages as $supportedLanguage) {
-            $this->allowedModes[] = $supportedLanguage;
-        }
     }
 }
