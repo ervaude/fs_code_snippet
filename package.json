@@ -10,9 +10,9 @@
     "license": "GPL-2.0+",
     "author": "Daniel Goerz",
     "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-concat": "^2.6.1",
-        "gulp-uglify": "^2.1.2",
+        "gulp": "^4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-uglify": "3.0.2",
         "prismjs": "^1.17.0",
         "yarn": "^1.19.0"
     }

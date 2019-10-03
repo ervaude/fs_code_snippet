@@ -1,19 +1,14 @@
 /*global require*/
-var gulp   = require('gulp'),
+const { series, src, dest } = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     privatePath = 'Resources/Private/',
     prismBasePath = 'node_modules/prismjs/',
     customBasePath = privatePath + 'JavaScript/';
 
-gulp.task('build', function () {
+function buildJs() {
     'use strict';
-    gulp.start(['build-js', 'build-css']);
-});
-
-gulp.task('build-js', function () {
-    'use strict';
-    return gulp.src([
+    return src([
         prismBasePath + 'components/prism-core.min.js',
         prismBasePath + 'components/prism-markup-templating.min.js',
         prismBasePath + 'components/prism-markup.min.js',
@@ -37,12 +32,12 @@ gulp.task('build-js', function () {
     ])
         .pipe(concat('FsCodeSnippet.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('Resources/Public/JavaScript/'));
-});
+        .pipe(dest('Resources/Public/JavaScript/'));
+}
 
-gulp.task('build-all-languages-js', function () {
+function buildAllLanguagesJs() {
     'use strict';
-    return gulp.src([
+    return src([
         // check prisms components.js for order (dependencies)
         prismBasePath + 'components/prism-core.min.js',
         prismBasePath + 'components/prism-markup-templating.min.js',
@@ -102,7 +97,6 @@ gulp.task('build-all-languages-js', function () {
         prismBasePath + 'components/prism-inform7.min.js',
         prismBasePath + 'components/prism-ini.min.js',
         prismBasePath + 'components/prism-j.min.js',
-        prismBasePath + 'components/prism-jade.min.js',
         prismBasePath + 'components/prism-java.min.js',
         prismBasePath + 'components/prism-json.min.js',
         prismBasePath + 'components/prism-jolie.min.js',
@@ -185,17 +179,21 @@ gulp.task('build-all-languages-js', function () {
     ])
         .pipe(concat('FsCodeSnippetAllLanguages.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('Resources/Public/JavaScript/'));
-});
+        .pipe(dest('Resources/Public/JavaScript/'));
+}
 
-gulp.task('build-css', function () {
+function buildCss() {
     'use strict';
-    return gulp.src([
+    return src([
             prismBasePath + 'themes/*.css',
             prismBasePath + 'plugins/toolbar/prism-toolbar.css',
             prismBasePath + 'plugins/line-numbers/prism-line-numbers.css',
-            prismBasePath + 'plugins/show-language/prism-show-language.css',
             prismBasePath + 'plugins/command-line/prism-command-line.css'
         ])
-        .pipe(gulp.dest('Resources/Public/CSS/'));
-});
+        .pipe(dest('Resources/Public/CSS/'));
+}
+
+
+exports.build = series(buildJs, buildCss);
+exports.buildCss = buildCss;
+exports.buildAllLanguagesJs = buildAllLanguagesJs;
