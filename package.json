@@ -1,6 +1,6 @@
 {
     "name": "fs_code_snippet",
-    "version": "1.9.0",
+    "version": "2.0.0",
     "description": "A code snippet content element for TYPO3 CMS based on prism.js",
     "main": "Resources/Public/JavaScript/FsCodeSnippet.js",
     "repository": {
@@ -10,10 +10,10 @@
     "license": "GPL-2.0+",
     "author": "Daniel Goerz",
     "devDependencies": {
-        "yarn": "^1.19.0",
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.1",
         "gulp-uglify": "^2.1.2",
-        "prismjs": "^1.9.0"
+        "prismjs": "^1.17.0",
+        "yarn": "^1.19.0"
     }
 }

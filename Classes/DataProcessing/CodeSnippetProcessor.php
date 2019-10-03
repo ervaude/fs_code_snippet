@@ -93,7 +93,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
     {
         switch ($programmingLanguage) {
             case CodeSnippetLanguage::HTML:
-            case CodeSnippetLanguage::XML:
                 return CodeSnippetLanguage::MARKUP;
             case CodeSnippetLanguage::COMMANDLINE:
                 return CodeSnippetLanguage::BASH;

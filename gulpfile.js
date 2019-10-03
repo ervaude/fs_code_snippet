@@ -15,6 +15,7 @@ gulp.task('build-js', function () {
     'use strict';
     return gulp.src([
         prismBasePath + 'components/prism-core.min.js',
+        prismBasePath + 'components/prism-markup-templating.min.js',
         prismBasePath + 'components/prism-markup.min.js',
         prismBasePath + 'components/prism-apacheconf.min.js',
         prismBasePath + 'components/prism-css.min.js',
