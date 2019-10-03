@@ -19,7 +19,7 @@ use TYPO3\CMS\Core\Configuration\TypoScript\ConditionMatching\AbstractCondition;
 /**
  * Class AllLanguagesCondition
  *
- * @author Daniel Goerz <ervaude@gmail.com>
+ * @author Daniel Goerz <usetypo3@posteo.de>
  */
 class AllLanguagesCondition extends AbstractCondition
 {

@@ -14,12 +14,11 @@ namespace DanielGoerz\FsCodeSnippet\Utility;
  * The TYPO3 project - inspiring people to share!
  */
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
 
 /**
  * Class ExtensionConfigurationUtility
  *
- * @author Daniel Goerz <ervaude@gmail.com>
+ * @author Daniel Goerz <usetypo3@posteo.de>
  */
 class FsCodeSnippetConfigurationUtility
 {
@@ -194,7 +193,7 @@ class FsCodeSnippetConfigurationUtility
         usort($items, function ($a, $b) {
             return strcmp($a[0], $b[0]);
         });
-        array_unshift($items, ['none', T3editorElement::MODE_MIXED]);
+        array_unshift($items, ['none', '']);
         return $items;
     }
 

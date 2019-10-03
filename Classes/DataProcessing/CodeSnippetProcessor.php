@@ -16,17 +16,16 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-use TYPO3\CMS\Extbase\Service\FlexFormService;
+use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
 /**
  * This data processor will map the internally used string for a programming language
  * to the string that the prism.js library expects. Internally not known types are
  * let through unchanged.
  *
- * @author Daniel Goerz <ervaude@gmail.com>
+ * @author Daniel Goerz <usetypo3@posteo.de>
  */
 class CodeSnippetProcessor implements DataProcessorInterface
 {
@@ -38,7 +37,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
      * @param array $processorConfiguration The configuration of this processor
      * @param array $processedData Key/value store of processed data (e.g. to be passed to a Fluid View)
      * @return array the processed data as key/value store
-     * @throws ContentRenderingException
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
@@ -64,7 +62,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
      */
     private function getFlexFormContentAsArray($flexFormContent)
     {
-        /** @var FlexFormService $flexFormService */
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         return $flexFormService->convertFlexFormContentToArray($flexFormContent);
     }
@@ -77,9 +74,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
      */
     private function getLayoutName()
     {
-        if (VersionNumberUtility::convertVersionNumberToInteger(TYPO3_branch) >= VersionNumberUtility::convertVersionNumberToInteger('8.6')) {
-            return 'Default';
-        }
         return 'HeaderContentFooter';
     }
 
