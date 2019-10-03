@@ -1,20 +1,15 @@
 <?php
 namespace DanielGoerz\FsCodeSnippet\ViewHelpers;
 
-/**
- * This file is part of the TYPO3 CMS project.
+/*
+ * This file is part of TYPO3 CMS-based extension fs_code_snippet.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
  * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
-use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /**
  * This ViewHelper renders the <pre> tag for the code-snippet content element
@@ -34,20 +29,35 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 
     /**
      * Initialize ViewHelper arguments
-     *
-     * @return void
      */
     public function initializeArguments()
     {
-        $this->registerArgument('commandLine', 'array', 'Configuration for commandLine mode.', false, []);
-        $this->registerArgument('lineNumbers', 'bool', 'Flag whether line numbers are enabled.', false, true);
-        $this->registerArgument('programmingLanguage', 'string', 'Name of the programming language for this snippet', true, CodeSnippetLanguage::MARKUP);
+        $this->registerArgument(
+            'commandLine',
+            'array',
+            'Configuration for commandLine mode.',
+            false,
+            []
+        );
+        $this->registerArgument(
+            'lineNumbers',
+            'bool',
+            'Flag whether line numbers are enabled.',
+            false,
+            true
+        );
+        $this->registerArgument(
+            'programmingLanguage',
+            'string',
+            'Name of the programming language for this snippet',
+            true
+        );
     }
 
     /**
      * @return string
      */
-    public function render()
+    public function render(): string
     {
         if ($this->isCommandLine()) {
             $this->addCommandLineAttributes($this->arguments['commandLine']);
@@ -65,7 +75,7 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return bool
      */
-    protected function isCommandLine()
+    protected function isCommandLine(): bool
     {
         return $this->hasArgument('commandLine') && !empty($this->arguments['commandLine']);
     }
@@ -73,14 +83,11 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return bool
      */
-    protected function hasLineNumbers()
+    protected function hasLineNumbers(): bool
     {
         return !$this->isCommandLine() && $this->hasArgument('lineNumbers') && !empty($this->arguments['lineNumbers']);
     }
 
-    /**
-     * @return void
-     */
     protected function addGeneralAttributes()
     {
         $this->addClass('language-' . $this->arguments['programmingLanguage']);
@@ -92,7 +99,6 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 
     /**
      * @param array $commandLineConfig
-     * @return void
      */
     protected function addCommandLineAttributes(array $commandLineConfig)
     {
@@ -110,9 +116,8 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 
     /**
      * @param string $class
-     * @return void
      */
-    protected function addClass($class)
+    protected function addClass(string $class)
     {
         $this->classes[] = $class;
     }
