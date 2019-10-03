@@ -2,20 +2,15 @@
 namespace DanielGoerz\FsCodeSnippet\DataProcessing;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of TYPO3 CMS-based extension fs_code_snippet.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
  * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
+
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -41,7 +36,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
         $processedData['commandline'] = [];
-        $processedData['layout'] = $this->getLayoutName();
 
         if ($processedData['data']['programming_language'] === CodeSnippetLanguage::COMMANDLINE) {
             $flexFormContent = $this->getFlexFormContentAsArray($processedData['data']['pi_flexform']);
@@ -64,17 +58,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
     {
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         return $flexFormService->convertFlexFormContentToArray($flexFormContent);
-    }
-
-    /**
-     * Since TYPO3 8.6 the layout structure of fluid_styled_content has changed.
-     * This method returns the correct layout name for the used TYPO3 version.
-     *
-     * @return string
-     */
-    private function getLayoutName()
-    {
-        return 'HeaderContentFooter';
     }
 
     /**
