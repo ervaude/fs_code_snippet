@@ -12,7 +12,7 @@ namespace DanielGoerz\FsCodeSnippet\Utility;
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
 
 /**
- * Class ExtensionConfigurationUtility
+ * Class FsCodeSnippetConfigurationUtility
  *
  * @author Daniel Goerz <usetypo3@posteo.de>
  */
@@ -23,17 +23,17 @@ class FsCodeSnippetConfigurationUtility
      *
      * @return array
      */
-    private static function getExtensionConfiguration()
+    private static function getExtensionConfiguration(): array
     {
-        return unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['fs_code_snippet']);
+        return $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['fs_code_snippet'] ?? [];
     }
 
     /**
-     * Returns whether all languages are enabled in the extension manager
+     * Returns whether all languages are enabled in the extension configuration
      *
      * @return bool
      */
-    public static function isAllLanguagesEnabled()
+    public static function isAllLanguagesEnabled(): bool
     {
         $conf = self::getExtensionConfiguration();
         return !empty($conf['enableAllLanguages']);
@@ -44,7 +44,7 @@ class FsCodeSnippetConfigurationUtility
      *
      * @return array
      */
-    private static function getItemArrayForAllLanguages()
+    private static function getItemArrayForAllLanguages(): array
     {
         $supportedLanguages = CodeSnippetLanguage::getConstants();
         $items = [];
@@ -198,7 +198,7 @@ class FsCodeSnippetConfigurationUtility
      *
      * @return array
      */
-    public static function getItemArrayForTCA()
+    public static function getItemArrayForTCA(): array
     {
         if (self::isAllLanguagesEnabled()) {
             return self::getItemArrayForAllLanguages();

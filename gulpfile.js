@@ -45,6 +45,7 @@ gulp.task('build-all-languages-js', function () {
     return gulp.src([
         // check prisms components.js for order (dependencies)
         prismBasePath + 'components/prism-core.min.js',
+        prismBasePath + 'components/prism-markup-templating.min.js',
         prismBasePath + 'components/prism-markup.min.js',
         prismBasePath + 'components/prism-apacheconf.min.js',
         prismBasePath + 'components/prism-css.min.js',
