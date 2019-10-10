@@ -27,5 +27,10 @@
   "replace": {
     "fs_code_snippet": "self.version",
     "typo3-ter/fs-code-snippet": "self.version"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "fs_code_snippet"
+    }
   }
 }
