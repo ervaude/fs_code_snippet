@@ -74,6 +74,4 @@ call_user_func(function () {
         'FILE:EXT:fs_code_snippet/Configuration/FlexForms/fs_code_snippet_flexform.xml',
         'fs_code_snippet'
     );
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('fs_code_snippet', 'Configuration/TypoScript', 'Code Snippet CE');
 });
