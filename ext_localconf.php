@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') || exit('Access denied.');
+defined('TYPO3_MODE') or die('Access denied!');
 
 use DanielGoerz\FsCodeSnippet\Form\Element\CodeSnippetElement;
 use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;

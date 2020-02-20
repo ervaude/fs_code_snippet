@@ -27,10 +27,7 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
      */
     protected $classes = [];
 
-    /**
-     * Initialize ViewHelper arguments
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument(
             'commandLine',
@@ -54,9 +51,6 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
         );
     }
 
-    /**
-     * @return string
-     */
     public function render(): string
     {
         if ($this->isCommandLine()) {
@@ -72,23 +66,17 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
         return $this->tag->render();
     }
 
-    /**
-     * @return bool
-     */
     protected function isCommandLine(): bool
     {
         return $this->hasArgument('commandLine') && !empty($this->arguments['commandLine']);
     }
 
-    /**
-     * @return bool
-     */
     protected function hasLineNumbers(): bool
     {
         return !$this->isCommandLine() && $this->hasArgument('lineNumbers') && !empty($this->arguments['lineNumbers']);
     }
 
-    protected function addGeneralAttributes()
+    protected function addGeneralAttributes(): void
     {
         $this->addClass('language-' . $this->arguments['programmingLanguage']);
         $this->tag->addAttribute('class', implode(' ', $this->classes));
@@ -97,10 +85,7 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
         $this->tag->forceClosingTag(true);
     }
 
-    /**
-     * @param array $commandLineConfig
-     */
-    protected function addCommandLineAttributes(array $commandLineConfig)
+    protected function addCommandLineAttributes(array $commandLineConfig): void
     {
         $this->addClass('command-line');
         if (!empty($commandLineConfig['output'])) {
@@ -114,10 +99,7 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
         $this->tag->addAttribute('data-host', $commandLineConfig['host'] ?: 'host');
     }
 
-    /**
-     * @param string $class
-     */
-    protected function addClass(string $class)
+    protected function addClass(string $class): void
     {
         $this->classes[] = $class;
     }

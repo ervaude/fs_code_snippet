@@ -34,7 +34,7 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         &$headerContent,
         &$itemContent,
         array &$row
-    ) {
+    ): void {
         // Process only fs_code_snippet
         if ($row['CType'] !== 'fs_code_snippet') {
             return;
@@ -49,12 +49,8 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     /**
      * Strips the content of the code snippet to a maximum of $limit lines
      * and removes opening and closing HTML tags as well as empty lines at the end.
-     *
-     * @param string $codeSnippet
-     * @param int $limit
-     * @return string
      */
-    protected function prepareCodeSnippet($codeSnippet, $limit = 5): string
+    protected function prepareCodeSnippet(string $codeSnippet, int $limit = 5): string
     {
         $lines = explode("\n", $codeSnippet);
         if (count($lines) > $limit) {
@@ -66,10 +62,6 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         return str_replace(['<', '>'], ['&lt', '&gt'], $codeSnippet);
     }
 
-    /**
-     * @param string $value
-     * @return string
-     */
     protected function getProgrammingLanguageLabel(string $value): string
     {
         foreach ($GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'] as $programmingLanguage) {

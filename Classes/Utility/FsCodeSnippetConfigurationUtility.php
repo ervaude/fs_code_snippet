@@ -20,8 +20,6 @@ class FsCodeSnippetConfigurationUtility
 {
     /**
      * Returns the extension configuration for fs_code_snippet as array.
-     *
-     * @return array
      */
     private static function getExtensionConfiguration(): array
     {
@@ -30,8 +28,6 @@ class FsCodeSnippetConfigurationUtility
 
     /**
      * Returns whether all languages are enabled in the extension configuration
-     *
-     * @return bool
      */
     public static function isAllLanguagesEnabled(): bool
     {
@@ -41,14 +37,13 @@ class FsCodeSnippetConfigurationUtility
 
     /**
      * Returns the TCA Item array with all supported languages.
-     *
-     * @return array
      */
     private static function getItemArrayForAllLanguages(): array
     {
         $supportedLanguages = CodeSnippetLanguage::getConstants();
         $items = [];
         foreach ($supportedLanguages as $supportedLanguage) {
+            $label = '';
             switch ($supportedLanguage) {
                 case CodeSnippetLanguage::CPP:
                     $label = 'C++';
@@ -195,8 +190,6 @@ class FsCodeSnippetConfigurationUtility
 
     /**
      * Provides item array for TCA
-     *
-     * @return array
      */
     public static function getItemArrayForTCA(): array
     {

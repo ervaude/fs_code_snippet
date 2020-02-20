@@ -13,9 +13,6 @@ use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
  */
 class CodeSnippetConfigurationWrapper
 {
-    /**
-     * @return bool
-     */
     public function allLanguages(): bool
     {
         return FsCodeSnippetConfigurationUtility::isAllLanguagesEnabled();

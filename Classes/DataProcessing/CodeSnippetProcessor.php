@@ -33,7 +33,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
      * @param array $processedData Key/value store of processed data (e.g. to be passed to a Fluid View)
      * @return array the processed data as key/value store
      */
-    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
+    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
         $processedData['commandline'] = [];
 
@@ -50,11 +50,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
         return $processedData;
     }
 
-    /**
-     * @param string $flexFormContent
-     * @return array
-     */
-    private function getFlexFormContentAsArray($flexFormContent)
+    private function getFlexFormContentAsArray(string $flexFormContent): array
     {
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
         return $flexFormService->convertFlexFormContentToArray($flexFormContent);
@@ -62,11 +58,8 @@ class CodeSnippetProcessor implements DataProcessorInterface
 
     /**
      * Map the CodeSnippetLanguage constants to the string expected by prism where they differ
-     *
-     * @param string $programmingLanguage
-     * @return string
      */
-    private function getProgrammingLanguageStringForPrism($programmingLanguage)
+    private function getProgrammingLanguageStringForPrism(string $programmingLanguage): string
     {
         switch ($programmingLanguage) {
             case CodeSnippetLanguage::HTML:
