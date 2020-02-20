@@ -20,11 +20,11 @@ if (TYPO3_MODE === 'BE') {
                 ['source' => 'EXT:fs_code_snippet/Resources/Public/Images/code-snippet-icon.png']
             );
 
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1449747562] = array(
+            $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1449747562] = [
                 'nodeName' => 'fs_code_snippet',
                 'priority' => 50,
                 'class' => CodeSnippetElement::class,
-            );
+            ];
 
             ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fs_code_snippet/Configuration/PageTSconfig/PageTSConfig.tsconfig">');
         }

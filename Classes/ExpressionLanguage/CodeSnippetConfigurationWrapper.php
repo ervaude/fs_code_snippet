@@ -1,8 +1,6 @@
 <?php
 
-
 namespace DanielGoerz\FsCodeSnippet\ExpressionLanguage;
-
 
 use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
 

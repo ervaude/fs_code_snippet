@@ -2,7 +2,6 @@
 defined('TYPO3_MODE') or die();
 
 call_user_func(function () {
-
     $frontendLanguageFilePrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 
     // Add the CType "fs_code_snippet"
