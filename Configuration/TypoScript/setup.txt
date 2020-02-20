@@ -1,11 +1,9 @@
-lib.contentElement {
-	templateRootPaths {
-		1450878401 = {$plugin.tx_fscodesnippet.view.templateRootPath}
-	}
-}
 tt_content {
 	fs_code_snippet =< lib.contentElement
 	fs_code_snippet {
+		templateRootPaths {
+			1450878401 = {$plugin.tx_fscodesnippet.view.templateRootPath}
+		}
 		templateName = CodeSnippet
 		dataProcessing {
 			10 = DanielGoerz\FsCodeSnippet\DataProcessing\CodeSnippetProcessor
