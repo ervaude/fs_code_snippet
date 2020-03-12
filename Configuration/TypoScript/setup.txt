@@ -21,7 +21,7 @@ page.includeCSS {
 	fsCodeSnippetMainCommandline =  EXT:fs_code_snippet/Resources/Public/CSS/prism-command-line.css
 }
 
-[globalVar = LIT:1 = {$plugin.tx_fscodesnippet.settings.lineNumbers}]
+[{$plugin.tx_fscodesnippet.settings.lineNumbers} == '1']
 	page.includeCSS.fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
 [global]
 
