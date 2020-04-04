@@ -19,7 +19,7 @@ Code Snippet CE (fs_code_snippet)
       en
 
 :Copyright:
-      2019
+      2020
 
 :Author:
       Daniel Goerz

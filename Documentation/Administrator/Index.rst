@@ -42,10 +42,3 @@ Most configuration is done via TypoScript constants which are editable in the co
 
 * Line numbers are enabled.
 
-It is also possible to enable **all** programming languages supported by prism.js. This can only be done in the extension manager
-module.
-
-
-.. important::
-
-    Please be aware that the included JavaScript file will have a size of roughly 230kb instead of 60kb if this option is activated.

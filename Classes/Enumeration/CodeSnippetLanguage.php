@@ -11,11 +11,6 @@ namespace DanielGoerz\FsCodeSnippet\Enumeration;
 
 use TYPO3\CMS\Core\Type\Enumeration;
 
-/**
- * Enumeration object for supported CodeSnippetLanguages
- *
- * @author Daniel Goerz <usetypo3@posteo.de>
- */
 class CodeSnippetLanguage extends Enumeration
 {
     const HTML = 'html';

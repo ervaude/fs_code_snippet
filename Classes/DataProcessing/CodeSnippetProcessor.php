@@ -19,8 +19,6 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  * This data processor will map the internally used string for a programming language
  * to the string that the prism.js library expects. Internally not known types are
  * let through unchanged.
- *
- * @author Daniel Goerz <usetypo3@posteo.de>
  */
 class CodeSnippetProcessor implements DataProcessorInterface
 {

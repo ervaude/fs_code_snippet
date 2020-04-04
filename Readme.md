@@ -31,17 +31,11 @@ Most configuration is done via TypoScript constants which are editable in the co
 
 * In the constant editor the *theme* of the code snippet can be adjusted according to the themes shipped by prism.js.
 
-* Line numbers are enabled by default. They can be disabled globally with the constant `{$plugin.tx_fscodesnippet.settings.lineNumbers}`.
-
-It is also possible to enable *all* programming languages supported by prism.js. This can only be done in the extension manager
-module.
-
-*Please be aware that the included JavaScript file will have a size of roughly 230kb instead of 60kb if this option is activated.*
-
+* Line numbers are enabled.
 
 ## Extendability
 
-Per default this extensions only provides a small selected subset of programming languages from the huge list supported by prism.js.
+Per default this extensions only provides a curated subset of programming languages from the huge list supported by prism.js.
 The main reason for this is to prevent the included JavaScript from being bloated with lots of code you never need.
 If you however do need support for a programming language not included in the default set, you can add any language yourself.
 You achieve this by overwriting the TCA for the programming_language field to include more programming_languages and extend

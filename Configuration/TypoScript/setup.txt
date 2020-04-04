@@ -20,7 +20,3 @@ page.includeCSS {
 	fsCodeSnippetMainCommandline =  EXT:fs_code_snippet/Resources/Public/CSS/prism-command-line.css
 	fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
 }
-
-[fsCodeSnippet.allLanguages()]
-page.includeJSFooter.fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippetAllLanguages.js
-[global]
