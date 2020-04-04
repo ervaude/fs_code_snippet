@@ -46,7 +46,6 @@ class CodeSnippetProcessor implements DataProcessorInterface
 
         $processedData['programmingLanguage'] = $this->getProgrammingLanguageStringForPrism($processedData['data']['programming_language']);
         $processedData['data']['bodytext'] = rtrim($processedData['data']['bodytext'], "\n\r\t");
-        $processedData['lineNumbers'] = !empty($processorConfiguration['lineNumbers']);
         return $processedData;
     }
 

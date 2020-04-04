@@ -19,11 +19,8 @@ page.includeCSS {
 	fsCodeSnippetMainToolbar = EXT:fs_code_snippet/Resources/Public/CSS/prism-toolbar.css
 	fsCodeSnippetMainShowLanguage = EXT:fs_code_snippet/Resources/Public/CSS/prism-show-language.css
 	fsCodeSnippetMainCommandline =  EXT:fs_code_snippet/Resources/Public/CSS/prism-command-line.css
+	fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
 }
-
-[{$plugin.tx_fscodesnippet.settings.lineNumbers} == '1']
-	page.includeCSS.fsCodeSnippetMainLineNUmbers = EXT:fs_code_snippet/Resources/Public/CSS/prism-line-numbers.css
-[global]
 
 [fsCodeSnippet.allLanguages()]
 page.includeJSFooter.fsCodeSnippet = EXT:fs_code_snippet/Resources/Public/JavaScript/FsCodeSnippetAllLanguages.js

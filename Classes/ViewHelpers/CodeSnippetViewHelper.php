@@ -37,13 +37,6 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
             []
         );
         $this->registerArgument(
-            'lineNumbers',
-            'bool',
-            'Flag whether line numbers are enabled.',
-            false,
-            true
-        );
-        $this->registerArgument(
             'programmingLanguage',
             'string',
             'Name of the programming language for this snippet',
@@ -73,7 +66,7 @@ class CodeSnippetViewHelper extends AbstractTagBasedViewHelper
 
     protected function hasLineNumbers(): bool
     {
-        return !$this->isCommandLine() && $this->hasArgument('lineNumbers') && !empty($this->arguments['lineNumbers']);
+        return !$this->isCommandLine();
     }
 
     protected function addGeneralAttributes(): void
