@@ -17,7 +17,7 @@ if (TYPO3_MODE === 'BE') {
             $iconRegistry->registerIcon(
                 'fs-code-snippet',
                 BitmapIconProvider::class,
-                ['source' => 'EXT:fs_code_snippet/Resources/Public/Images/code-snippet-icon.png']
+                ['source' => 'EXT:fs_code_snippet/Resources/Public/Icons/code-snippet-icon.png']
             );
 
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1449747562] = [
