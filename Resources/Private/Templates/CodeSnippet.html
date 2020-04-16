@@ -2,8 +2,10 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-	<cs:codeSnippet commandLine="{commandline}" programmingLanguage="{programmingLanguage}">
-		<code class="language-{programmingLanguage}">{data.bodytext}</code>
-	</cs:codeSnippet>
+	<f:spaceless>
+		<cs:codeSnippet commandLine="{commandline}" programmingLanguage="{programmingLanguage}">
+			<code class="language-{programmingLanguage}">{data.bodytext}</code>
+		</cs:codeSnippet>
+	</f:spaceless>
 </f:section>
 </html>
