@@ -7,7 +7,7 @@ It makes use of the T3Editor in the backend and the code snippet library prism.j
 
 ## Requirements
 
-* TYPO3 9 LTS
+* TYPO3 9 LTS or 10 LTS
 * fluid_styled_content
 * t3editor
 
@@ -26,7 +26,7 @@ To install the extension, perform the following steps:
 
 Most configuration is done via TypoScript constants which are editable in the constant editor in the TYPO3 backend.
 
-* The TemplateRootPath can be overwritten with constant `{$plugin.tx_fscodesnippet.view.templateRootPath}`. However the fallback mechanism of
+* The TemplateRootPath can be overwritten with constant `{$plugin.tx_fscodesnippet.view.templateRootPath}`. However, the fallback mechanism of
 `FLUIDTEMPLATE` could be used as well to override the default template.
 
 * In the constant editor the *theme* of the code snippet can be adjusted according to the themes shipped by prism.js.
