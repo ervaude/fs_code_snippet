@@ -23,10 +23,12 @@ call_user_func(function () {
             'onChange' => 'reload',
             'exclude' => true,
             'label' => 'Programming Language',
+            'description' => 'Select the coding language so that the correct syntax highlighting can be applied in the frontend.',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA()
+                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
+                'default' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PHP
             ]
         ]
     ];
@@ -37,10 +39,11 @@ call_user_func(function () {
     // What fields should be displayed
     $GLOBALS['TCA']['tt_content']['types']['fs_code_snippet'] = [
         'showitem' => '
-            --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
-            --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
             programming_language,pi_flexform,
             bodytext,
+            --div--;' . $frontendLanguageFilePrefix . 'header,
+            --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
+            --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
             --div--;' . $frontendLanguageFilePrefix . 'tabs.appearance,
 				layout;' . $frontendLanguageFilePrefix . 'layout_formlabel,
 				--palette--;' . $frontendLanguageFilePrefix . 'palette.appearanceLinks;appearanceLinks,
@@ -54,6 +57,7 @@ call_user_func(function () {
     $GLOBALS['TCA']['tt_content']['types']['fs_code_snippet']['columnsOverrides'] = [
         'bodytext' => [
             'label' => 'Code Snippet',
+            'description' => 'Syntax highlighting in the backend is limited to PHP, JavaScript, CSS, TypoScript and HTMl. Full syntax highlighting will be applied in the frontend.',
             'config' => [
                 'type' => 'text',
                 'renderType' => 'fs_code_snippet',
