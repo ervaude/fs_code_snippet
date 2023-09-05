@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  DanielGoerz\FsCodeSnippet\EventListener\Backend\CodeSnippetPreviewRenderer:
+    tags:
+      - name: event.listener
+        identifier: 'page-content-preview-rendering'
