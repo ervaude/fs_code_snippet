@@ -11,7 +11,6 @@ namespace DanielGoerz\FsCodeSnippet\EventListener\Backend;
  */
 
 use TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Contains the preview rendering in the page module for CType="fs_code_snippet"
@@ -21,7 +20,7 @@ class CodeSnippetPreviewRenderer
 
     public function __invoke(PageContentPreviewRenderingEvent $event): void
     {
-        if($event->getRecord()['CType'] !== 'fs_code_snippet'){
+        if ($event->getRecord()['CType'] !== 'fs_code_snippet') {
             return;
         }
         $this->preProcess($event);
@@ -34,9 +33,7 @@ class CodeSnippetPreviewRenderer
     public function preProcess(PageContentPreviewRenderingEvent $event): void
     {
         $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($event->getRecord()['programming_language']) . ':</strong><br />' .
-            '<pre style="   display: block; padding: 8.5px; margin: 0px; font-size: 11px; line-height: 1.5; color: #5A5A5A; word-break: break-all; word-wrap: break-word;
-                            background-color: #F5F5F5; border: 1px solid #ccc; border-radius: 2px;"><code>' . $this->prepareCodeSnippet($event->getRecord()['bodytext'])
-            . '</code></pre>';
+            '<pre><code>' . $this->prepareCodeSnippet($event->getRecord()['bodytext']). '</code></pre>';
         $event->setPreviewContent($itemContent);
     }
 
