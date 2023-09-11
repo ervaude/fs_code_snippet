@@ -7,14 +7,11 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Daniel Goerz',
     'author_email' => 'usetypo3@posteo.de',
     'state' => 'stable',
-    'uploadfolder' => false,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
     'author_company' => '',
     'version' => '3.1.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-11.5.99',
+            'typo3' => '12.0.0-12.4.99',
             'fluid_styled_content' => '',
             't3editor' => ''
         ],
