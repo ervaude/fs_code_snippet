@@ -1,5 +1,6 @@
 <?php
-namespace DanielGoerz\FsCodeSnippet\Hook;
+
+namespace DanielGoerz\FsCodeSnippet\EventListener\Backend;
 
 /*
  * This file is part of TYPO3 CMS-based extension fs_code_snippet.
@@ -9,39 +10,31 @@ namespace DanielGoerz\FsCodeSnippet\Hook;
  * of the License, or any later version.
  */
 
-use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
-use TYPO3\CMS\Backend\View\PageLayoutView;
+use TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent;
 
 /**
  * Contains the preview rendering in the page module for CType="fs_code_snippet"
  */
-class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
+class CodeSnippetPreviewRenderer
 {
+
+    public function __invoke(PageContentPreviewRenderingEvent $event): void
+    {
+        if ($event->getRecord()['CType'] !== 'fs_code_snippet') {
+            return;
+        }
+        $this->preProcess($event);
+    }
+
     /**
      * Preprocesses the preview rendering of a content element of type "fs_code_snippet"
      *
-     * @param PageLayoutView $parentObject Calling parent object
-     * @param bool $drawItem Whether to draw the item using the default functionality
-     * @param string $headerContent Header content
-     * @param string $itemContent Item content
-     * @param array $row Record row of tt_content
      */
-    public function preProcess(
-        PageLayoutView &$parentObject,
-        &$drawItem,
-        &$headerContent,
-        &$itemContent,
-        array &$row
-    ): void {
-        // Process only fs_code_snippet
-        if ($row['CType'] !== 'fs_code_snippet') {
-            return;
-        }
-
-        $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($row['programming_language']) . ':</strong><br />' .
-            '<pre><code>' . $this->prepareCodeSnippet($row['bodytext']) . '</code></pre>';
-
-        $drawItem = false;
+    public function preProcess(PageContentPreviewRenderingEvent $event): void
+    {
+        $itemContent = '<strong>' . $this->getProgrammingLanguageLabel($event->getRecord()['programming_language']) . ':</strong><br />' .
+            '<pre><code>' . $this->prepareCodeSnippet($event->getRecord()['bodytext']). '</code></pre>';
+        $event->setPreviewContent($itemContent);
     }
 
     /**
@@ -63,8 +56,8 @@ class CodeSnippetPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     protected function getProgrammingLanguageLabel(string $value): string
     {
         foreach ($GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'] as $programmingLanguage) {
-            if ($programmingLanguage[1] === $value) {
-                return $programmingLanguage[0];
+            if ($programmingLanguage['value'] === $value) {
+                return $programmingLanguage['label'];
             }
         }
         return $value;
