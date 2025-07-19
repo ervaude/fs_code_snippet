@@ -9,9 +9,7 @@ namespace DanielGoerz\FsCodeSnippet\Enumeration;
  * of the License, or any later version.
  */
 
-use TYPO3\CMS\Core\Type\Enumeration;
-
-class CodeSnippetLanguage extends Enumeration
+enum CodeSnippetLanguage: string
 {
     const HTML = 'html';
     const XML = 'xml';

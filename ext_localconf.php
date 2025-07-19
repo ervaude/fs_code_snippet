@@ -16,7 +16,5 @@ call_user_func(
             'priority' => 50,
             'class' => CodeSnippetElement::class,
         ];
-
-        ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fs_code_snippet/Configuration/PageTSconfig/PageTSConfig.tsconfig">');
     }
 );

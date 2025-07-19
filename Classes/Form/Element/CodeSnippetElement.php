@@ -10,7 +10,7 @@ namespace DanielGoerz\FsCodeSnippet\Form\Element;
  */
 
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
+use TYPO3\CMS\Backend\Form\Element\CodeEditorElement;
 
 /**
  * CodeSnippet FormEngine Element
@@ -18,7 +18,7 @@ use TYPO3\CMS\T3editor\Form\Element\T3editorElement;
  * Makes sure we load the correct codemirror mode for the T3Editor
  * @author Daniel Goerz <usetypo3@posteo.de>
  */
-class CodeSnippetElement extends T3editorElement
+class CodeSnippetElement extends CodeEditorElement
 {
     /**
      * Render t3editor element
