@@ -20,8 +20,8 @@
 	"homepage": "https://usetypo3.com",
 	"require": {
 		"php": "^8.2",
-		"typo3/cms-backend": "^13.4.35 || ^14.3.7",
-		"typo3/cms-core": "^13.4.35 || ^14.3.7"
+		"typo3/cms-backend": "^14.3.7",
+		"typo3/cms-core": "^14.3.7"
 	},
 	"require-dev": {
 		"ergebnis/composer-normalize": "^2.48"
@@ -35,7 +35,9 @@
 	},
 	"config": {
 		"allow-plugins": {
+			"a9f/fractor-extension-installer": true,
 			"ergebnis/composer-normalize": true,
+			"phpstan/extension-installer": true,
 			"typo3/class-alias-loader": true,
 			"typo3/cms-composer-installers": true
 		},

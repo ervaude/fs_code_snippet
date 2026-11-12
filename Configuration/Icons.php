@@ -1,8 +1,10 @@
 <?php
 
+use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
+
 return [
     'fs-code-snippet' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        'provider' => BitmapIconProvider::class,
         'source' => 'EXT:fs_code_snippet/Resources/Public/Icons/code-snippet-icon.png'
     ],
 ];
