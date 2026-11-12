@@ -1,4 +1,5 @@
 <?php
+
 namespace DanielGoerz\FsCodeSnippet\Utility;
 
 /*
@@ -16,17 +17,50 @@ class FsCodeSnippetConfigurationUtility
     public static function getItemArrayForTCA(): array
     {
         return [
-            ['Apache Config',   CodeSnippetLanguage::APACHE_CONFIGURATION],
-            ['Bash',            CodeSnippetLanguage::BASH],
-            ['Command-line',    CodeSnippetLanguage::COMMANDLINE],
-            ['CSS',             CodeSnippetLanguage::CSS],
-            ['HTML',            CodeSnippetLanguage::HTML],
-            ['JavaScript',      CodeSnippetLanguage::JAVASCRIPT],
-            ['JSON',            CodeSnippetLanguage::JSON],
-            ['PHP',             CodeSnippetLanguage::PHP],
-            ['Typoscript',      CodeSnippetLanguage::TYPOSCRIPT],
-            ['XML',             CodeSnippetLanguage::XML],
-            ['YAML',            CodeSnippetLanguage::YAML]
+            [
+                'label' => 'Apache Config',
+                'value' => CodeSnippetLanguage::APACHE_CONFIGURATION,
+            ],
+            [
+                'label' => 'Bash',
+                'value' => CodeSnippetLanguage::BASH,
+            ],
+            [
+                'label' => 'Command-line',
+                'value' => CodeSnippetLanguage::COMMANDLINE,
+            ],
+            [
+                'label' => 'CSS',
+                'value' => CodeSnippetLanguage::CSS,
+            ],
+            [
+                'label' => 'HTML',
+                'value' => CodeSnippetLanguage::HTML,
+            ],
+            [
+                'label' => 'JavaScript',
+                'value' => CodeSnippetLanguage::JAVASCRIPT,
+            ],
+            [
+                'label' => 'JSON',
+                'value' => CodeSnippetLanguage::JSON,
+            ],
+            [
+                'label' => 'PHP',
+                'value' => CodeSnippetLanguage::PHP,
+            ],
+            [
+                'label' => 'Typoscript',
+                'value' => CodeSnippetLanguage::TYPOSCRIPT,
+            ],
+            [
+                'label' => 'XML',
+                'value' => CodeSnippetLanguage::XML,
+            ],
+            [
+                'label' => 'YAML',
+                'value' => CodeSnippetLanguage::YAML,
+            ]
         ];
     }
 }

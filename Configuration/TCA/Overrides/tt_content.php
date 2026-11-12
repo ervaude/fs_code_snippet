@@ -1,18 +1,19 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Schema\Struct\SelectItem;
+use DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility;
+use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
+
 defined('TYPO3') or die();
 
 call_user_func(function () {
     $frontendLanguageFilePrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 
     // Add the CType "fs_code_snippet"
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
         'CType',
-        [
-            'Code Snippet',
-            'fs_code_snippet',
-            'fs-code-snippet'
-        ],
+        new SelectItem(type: 'select', label: 'Code Snippet', value: 'fs_code_snippet', icon: 'fs-code-snippet'),
         'list',
         'after'
     );
@@ -27,12 +28,12 @@ call_user_func(function () {
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => \DanielGoerz\FsCodeSnippet\Utility\FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
-                'default' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PHP
+                'items' => FsCodeSnippetConfigurationUtility::getItemArrayForTCA(),
+                'default' => CodeSnippetLanguage::PHP
             ]
         ]
     ];
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $newColumn);
+    ExtensionManagementUtility::addTCAcolumns('tt_content', $newColumn);
 
     // Use type icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['fs_code_snippet'] = 'fs-code-snippet';
@@ -67,12 +68,12 @@ call_user_func(function () {
         ],
         'pi_flexform' => [
             'label' => 'Command-line options',
-            'displayCond' => 'FIELD:programming_language:=:' . \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::COMMANDLINE
+            'displayCond' => 'FIELD:programming_language:=:' . CodeSnippetLanguage::COMMANDLINE
         ]
     ];
 
     // Add a flexform to the fs_code_snippet CType
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    ExtensionManagementUtility::addPiFlexFormValue(
         '',
         'FILE:EXT:fs_code_snippet/Configuration/FlexForms/fs_code_snippet_flexform.xml',
         'fs_code_snippet'

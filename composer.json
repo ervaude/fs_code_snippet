@@ -1,33 +1,54 @@
 {
-  "name": "danielgoerz/fs-code-snippet",
-  "type": "typo3-cms-extension",
-  "description": "A content element to render code snippets of various programming languages.",
-  "keywords": [
-    "TYPO3",
-    "extension",
-    "code snippet"
-  ],
-  "homepage": "https://usetypo3.com",
-  "authors": [
-    {
-      "name": "Daniel Goerz",
-      "role": "Developer",
-      "homepage": "https://usetypo3.com"
-    }
-  ],
-  "license": ["GPL-2.0-or-later"],
-  "require": {
-    "typo3/cms-core": "^12.4",
-    "typo3/cms-t3editor": "^12.4"
-  },
-  "autoload": {
-    "psr-4": {
-      "DanielGoerz\\FsCodeSnippet\\": "Classes"
-    }
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "fs_code_snippet"
-    }
-  }
+	"name": "danielgoerz/fs-code-snippet",
+	"description": "A content element to render code snippets of various programming languages.",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"type": "typo3-cms-extension",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"code snippet"
+	],
+	"authors": [
+		{
+			"name": "Daniel Goerz",
+			"homepage": "https://usetypo3.com",
+			"role": "Developer"
+		}
+	],
+	"homepage": "https://usetypo3.com",
+	"require": {
+		"php": "^8.2",
+		"typo3/cms-backend": "^14.3.7",
+		"typo3/cms-core": "^14.3.7"
+	},
+	"require-dev": {
+		"ergebnis/composer-normalize": "^2.48"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"DanielGoerz\\FsCodeSnippet\\": "Classes"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"a9f/fractor-extension-installer": true,
+			"ergebnis/composer-normalize": true,
+			"phpstan/extension-installer": true,
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		},
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "fs_code_snippet",
+			"web-dir": ".Build/public"
+		}
+	}
 }

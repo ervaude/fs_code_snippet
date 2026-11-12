@@ -24,7 +24,7 @@ In any extension of yours, create the file `Configuration/TCA/Overrides/tt_conte
 
 .. code-block:: php
 
-    $GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'][] = ['Python' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PYTHON];
+    $GLOBALS['TCA']['tt_content']['columns']['programming_language']['config']['items'][] = ['label' => 'Python', 'value' => \DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage::PYTHON];
 
 You can add every language identifier that prism supports. Anyway the T3Editor won't know that syntax and will run in "mixed" mode.
 

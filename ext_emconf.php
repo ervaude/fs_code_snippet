@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUndefinedVariableInspection */
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Code Snippet CE',
@@ -8,12 +8,11 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'usetypo3@posteo.de',
     'state' => 'stable',
     'author_company' => '',
-    'version' => '3.1.0',
+    'version' => '4.0.1',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.0.0-12.4.99',
-            'fluid_styled_content' => '',
-            't3editor' => ''
+            'typo3' => '13.4.0-14.3.99',
+            'fluid_styled_content' => ''
         ],
         'conflicts' => [],
         'suggests' => [],

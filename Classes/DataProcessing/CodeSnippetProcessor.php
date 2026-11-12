@@ -10,7 +10,6 @@ namespace DanielGoerz\FsCodeSnippet\DataProcessing;
  */
 
 use DanielGoerz\FsCodeSnippet\Enumeration\CodeSnippetLanguage;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -22,6 +21,9 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class CodeSnippetProcessor implements DataProcessorInterface
 {
+    public function __construct(private readonly FlexFormService $flexFormService)
+    {
+    }
     /**
      * Process data for the CType "fs_code_snippet"
      *
@@ -49,7 +51,7 @@ class CodeSnippetProcessor implements DataProcessorInterface
 
     private function getFlexFormContentAsArray(string $flexFormContent): array
     {
-        $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
+        $flexFormService = $this->flexFormService;
         return $flexFormService->convertFlexFormContentToArray($flexFormContent);
     }
 

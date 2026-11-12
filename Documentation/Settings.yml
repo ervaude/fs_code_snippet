@@ -4,10 +4,10 @@
 
 ---
 conf.py:
-  copyright: 2019
+  copyright: 2025
   project: fs_code_snippet
-  version: 2.0.0
-  release: 2.0.0
+  version: 4.0.0
+  release: 4.0.0
   latex_elements:
     papersize: a4paper
     pointsize: 10pt
